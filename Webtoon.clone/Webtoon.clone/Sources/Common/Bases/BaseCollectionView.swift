@@ -9,8 +9,18 @@ import UIKit
 
 class BaseCollectionView: UICollectionView {
   
+  var flowLayout: UICollectionViewFlowLayout? {
+    return collectionViewLayout as? UICollectionViewFlowLayout
+  }
+  
   override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
     super.init(frame: frame, collectionViewLayout: layout)
+    setupUI()
+    setupBinding()
+  }
+  
+  init() {
+    super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     setupUI()
     setupBinding()
   }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension Chain where Origin: UICollectionView {
+extension Chain where Origin: BaseCollectionView {
   @discardableResult
   func register(_ cellType: UICollectionViewCell.Type) -> Chain {
     self.origin.register(cellType,
@@ -38,5 +38,20 @@ extension Chain where Origin: UICollectionView {
     self.origin.bounces = bounces
     return self
   }
+  
+  @discardableResult
+  func itemSize(_ size: CGSize) -> Chain {
+    self.origin.flowLayout?.itemSize = size
+    return self
+  }
+  @discardableResult
+  func minimumLineSpacing(_ spacing: CGFloat) -> Chain {
+    self.origin.flowLayout?.minimumLineSpacing = spacing
+    return self
+  }
+  @discardableResult
+  func minimumInteritemSpacing(_ spacing: CGFloat) -> Chain {
+    self.origin.flowLayout?.minimumInteritemSpacing = spacing
+    return self
+  }
 }
-

@@ -13,13 +13,14 @@ import Resolver
 final class WebtoonViewController: BasePageViewController {
   struct Metric {
     static let bannerHeight = CGFloat(144)
+    static let pageBarHeight = CGFloat(44)
   }
   
   @Injected var viewModel: WebtoonViewModel
   @Injected var navigator: WebtoonNavigator
   
   private let bannerView = UIView()
-  let pageBar = UIView()
+  let pageBarView = UIView()
 }
 
 extension WebtoonViewController {
@@ -32,20 +33,22 @@ extension WebtoonViewController {
       .background(color: Color.white)
     
     bannerView.asChainable()
-      .background(color: Color.empty)
+      .background(color: Color.empty.withAlphaComponent(0.5))
       .add(to: view)
-      .makeConstraints { (make) in
-        make.top.equalToSuperview()
-        make.leading.trailing.equalToSuperview()
-        make.height.equalTo(Metric.bannerHeight)
-      }
     
-    pageBar.asChainable()
-      .background(color: .red)
+    pageBarView.asChainable()
+      .background(color: UIColor.systemPurple.withAlphaComponent(0.8))
       .add(to: view)
-      .makeConstraints { (make) in
-        <#code#>
-      }
+    
+    
+    bannerView.frame = CGRect(x: 0,
+                               y: 0,
+                               width: Device.width,
+                               height: Metric.bannerHeight)
+    pageBarView.frame = CGRect(x: 0,
+                                y: Metric.bannerHeight,
+                                width: Device.width,
+                                height: Metric.pageBarHeight)
     
   }
 }

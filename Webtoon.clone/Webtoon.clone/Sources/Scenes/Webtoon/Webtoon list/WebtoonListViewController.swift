@@ -11,35 +11,40 @@ import Resolver
 
 final class WebtoonListViewController: BaseViewController {
   struct Metric {
-    static let cellWidth = CGFloat(Device.width / 3)
-    static let cellHeight = CGFloat(192)
+    static let cellSize = CGSize(width: Device.width / 3, height: 192)
   }
   
   @Injected var viewModel: WebtoonListViewModel
   @Injected var navigator: WebtoonNavigator
   
-  private let webtoonListView: BaseCollectionView = {
-    let layout = UICollectionViewFlowLayout()
-    let view = BaseCollectionView(frame: .zero, collectionViewLayout: layout)
-    layout.itemSize = CGSize(width: Metric.cellWidth, height: Metric.cellHeight)
-    layout.minimumLineSpacing = 0
-    layout.minimumInteritemSpacing = 0
-    return view
-  }()
+  private let webtoonListView = BaseCollectionView()
+
 }
 
 extension WebtoonListViewController {
   override func setupUI() {
     super.setupUI()
     
+    guard let pageVC = parent as? WebtoonViewController else { return }
+    
     webtoonListView.asChainable()
       .register(WebtoonListCell.self)
+      .itemSize(Metric.cellSize)
+      .minimumLineSpacing(0)
+      .minimumInteritemSpacing(0)
       .bounces(false)
       .add(to: view)
-      .makeConstraints { (make) in
-        make.top.equalToSuperview()
-        make.leading.trailing.bottom.equalToSuperview()
-      }
+      
+    let height = WebtoonViewController.Metric.bannerHeight + WebtoonViewController.Metric.pageBarHeight
+    
+    webtoonListView.frame = CGRect(x: 0, y: height, width: Device.width, height: Device.height - height)
+    
+    webtoonListView.rx.contentOffset
+      .map { $0.y }
+      .subscribe(onNext: {
+        pageVC.pageBarView.frame.origin.y = max(WebtoonViewController.Metric.bannerHeight - $0, self.topBarHeight)
+        self.webtoonListView.frame.origin.y = max(self.topBarHeight + WebtoonViewController.Metric.pageBarHeight - $0, self.topBarHeight + WebtoonViewController.Metric.pageBarHeight)
+      })
     
     webtoonListView.rx.contentOffset
       .subscribe(onNext: { [weak self] in
