@@ -26,9 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension Resolver: ResolverRegistering {
   public static func registerAllServices() {
+    AppNavigator.registerServices()
     AppNavigator.registerSplashScene()
     SplashNavigator.registerSplashScenes()
     MainNavigator.registerMainScenes()
+    WebtoonNavigator.registerWebtoonScenes()
   }
 }
 

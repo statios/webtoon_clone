@@ -19,6 +19,7 @@ class MainViewController: BaseTabBarController {
 extension MainViewController {
   override func setupUI() {
     super.setupUI()
+    navigator.setViewControllers(in: self)
   }
 }
 

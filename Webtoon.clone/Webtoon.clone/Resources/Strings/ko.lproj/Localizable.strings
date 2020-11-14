@@ -1,0 +1,18 @@
+/* 
+  Strings.strings
+  Webtoon.clone
+
+  Created by Stat.So on 2020/11/14.
+  
+*/
+
+"webtoon" = "웹툰";
+"best_challenge" = "베스트도전";
+"setting" = "설정";
+"mon" = "월";
+"tue" = "화";
+"wed" = "수";
+"thu" = "목";
+"fri" = "금";
+"sat" = "토";
+"sun" = "일";

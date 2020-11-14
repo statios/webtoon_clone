@@ -21,5 +21,20 @@ extension AppNavigator {
   static func registerSplashScene() {
     Resolver.register { SplashViewModel() }
     Resolver.register { SplashNavigator() }
+    Resolver.register { SplashInteractor() }
+      .implements(SplashInteractable.self)
+  }
+  static func registerServices() {
+    #if DEBUG
+    Resolver.register {
+      WebtoonSampleService()
+    }.implements(WebtoonServiceType.self)
+    .scope(Resolver.application) //Singleton
+    #else
+    Resolver.register {
+      WebtoonService()
+    }.implements(WebtoonServiceType.self)
+    .scope(Resolver.application)
+    #endif
   }
 }

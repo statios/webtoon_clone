@@ -1,5 +1,5 @@
 //
-//  BaseTabBarController.swift
+//  BaseNavigationController.swift
 //  Webtoon.clone
 //
 //  Created by Stat.So on 2020/11/14.
@@ -8,13 +8,13 @@
 import RxSwift
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class BaseNavigationController: UINavigationController {
   
   var disposeBag = DisposeBag()
   
-  init() {
-    super.init(nibName: nil, bundle: nil)
-    Log.verbose(String(describing: Self.self))
+  override init(rootViewController: UIViewController) {
+    super.init(rootViewController: rootViewController)
+//    Log.verbose(String(describing: Self.self))
     initialize()
   }
   
@@ -23,16 +23,13 @@ class BaseTabBarController: UITabBarController {
   }
   
   deinit {
-    Log.verbose(String(describing: Self.self))
+//    Log.verbose(String(describing: Self.self))
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    rx.viewWillAppear.take(1)
-      .subscribe(onNext: { [weak self] _ in
-        self?.setupUI()
-        self?.setupBinding()
-      }).disposed(by: disposeBag)
+    setupUI()
+    setupBinding()
   }
   
   @objc dynamic func initialize() {
@@ -40,7 +37,8 @@ class BaseTabBarController: UITabBarController {
   }
   
   @objc dynamic func setupUI() {
-
+    navigationBar.barTintColor = Color.white
+    navigationBar.isTranslucent = false
   }
   
   @objc dynamic func setupBinding() {

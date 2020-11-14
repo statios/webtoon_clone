@@ -32,11 +32,7 @@ extension WebtoonAPI: TargetType {
   
   var sampleData: Data {
     switch self {
-    case .splash:
-      let path = Bundle.main.path(forResource: "Splash", ofType: "json")!
-      let url = URL(fileURLWithPath: path)
-      let data = try! Data(contentsOf: url)
-      return data
+    case .splash: return getSampleData(name: "splash")
     }
   }
   
@@ -51,4 +47,12 @@ extension WebtoonAPI: TargetType {
   }
 }
 
-
+// Helpers
+extension WebtoonAPI {
+  private func getSampleData(name: String?) -> Data {
+    guard let path = Bundle.main.path(forResource: name, ofType: "json") else { return Data() }
+    let url = URL(fileURLWithPath: path)
+    guard let data = try? Data(contentsOf: url) else { return Data() }
+    return data
+  }
+}

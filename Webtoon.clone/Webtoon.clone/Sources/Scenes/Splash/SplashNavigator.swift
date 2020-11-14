@@ -9,10 +9,10 @@ import Resolver
 import UIKit
 
 class SplashNavigator: BaseNavigator {
-  func presentMainScene(in target: UIViewController) {
+  func presentMainScene(in target: UIViewController?) {
     let viewControllelr = MainViewController()
     viewControllelr.modalPresentationStyle = .fullScreen
-    target.present(viewControllelr, animated: true)
+    target?.present(viewControllelr, animated: true)
   }
 }
 

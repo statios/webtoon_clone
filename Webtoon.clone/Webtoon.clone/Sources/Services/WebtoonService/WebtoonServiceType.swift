@@ -10,6 +10,8 @@ import RxCocoa
 import RxMoya
 import Alamofire
 
+typealias Empty = String
+
 protocol WebtoonServiceType {
   var provider: NetworkProvider<WebtoonAPI> { get }
 }

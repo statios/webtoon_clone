@@ -1,0 +1,18 @@
+/* 
+  Strings.strings
+  Webtoon.clone
+
+  Created by Stat.So on 2020/11/14.
+  
+*/
+
+"webtoon" = "Webtoon";
+"best_challenge" = "Challenge";
+"setting" = "Setting";
+"mon" = "Mon";
+"tue" = "Tue";
+"wed" = "Wed";
+"thu" = "Thu";
+"fri" = "Fri";
+"sat" = "Sat";
+"sun" = "Sun";
