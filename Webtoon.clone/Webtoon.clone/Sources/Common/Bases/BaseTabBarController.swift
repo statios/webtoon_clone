@@ -40,7 +40,8 @@ class BaseTabBarController: UITabBarController {
   }
   
   @objc dynamic func setupUI() {
-
+    tabBar.asChainable()
+      .barTint(color: Color.white)
   }
   
   @objc dynamic func setupBinding() {

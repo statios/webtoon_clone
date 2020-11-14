@@ -9,7 +9,7 @@ import RxSwift
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-  
+
   var disposeBag = DisposeBag()
   
   override init(rootViewController: UIViewController) {
@@ -37,8 +37,8 @@ class BaseNavigationController: UINavigationController {
   }
   
   @objc dynamic func setupUI() {
-    navigationBar.barTintColor = Color.white
-    navigationBar.isTranslucent = false
+//    navigationBar.barTintColor = Color.white
+//    navigationBar.isTranslucent = true
   }
   
   @objc dynamic func setupBinding() {

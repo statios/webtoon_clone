@@ -19,20 +19,34 @@ final class WebtoonViewController: BasePageViewController {
   @Injected var navigator: WebtoonNavigator
   
   private let bannerView = UIView()
+  let pageBar = UIView()
 }
 
 extension WebtoonViewController {
   override func setupUI() {
     super.setupUI()
-    navigator.setViewControllers(in: self)
+    navigator
+      .setViewControllers(in: self)
+    
+    view.asChainable()
+      .background(color: Color.white)
     
     bannerView.asChainable()
       .background(color: Color.empty)
       .add(to: view)
       .makeConstraints { (make) in
-        make.leading.trailing.top.equalToSuperview()
+        make.top.equalToSuperview()
+        make.leading.trailing.equalToSuperview()
         make.height.equalTo(Metric.bannerHeight)
       }
+    
+    pageBar.asChainable()
+      .background(color: .red)
+      .add(to: view)
+      .makeConstraints { (make) in
+        <#code#>
+      }
+    
   }
 }
 

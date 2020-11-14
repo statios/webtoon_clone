@@ -12,6 +12,7 @@ class SplashNavigator: BaseNavigator {
   func presentMainScene(in target: UIViewController?) {
     let viewControllelr = MainViewController()
     viewControllelr.modalPresentationStyle = .fullScreen
+    viewControllelr.modalTransitionStyle = .crossDissolve
     target?.present(viewControllelr, animated: true)
   }
 }

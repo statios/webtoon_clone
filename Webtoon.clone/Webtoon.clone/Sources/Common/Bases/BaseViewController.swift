@@ -11,6 +11,13 @@ import UIKit
 class BaseViewController: UIViewController {
   
   var disposeBag = DisposeBag()
+  
+  var pageViewController: BasePageViewController? {
+    guard let pageViewController = parent as? BasePageViewController else {
+      return nil
+    }
+    return pageViewController
+  }
 
   init() {
     super.init(nibName: nil, bundle: nil)
