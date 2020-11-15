@@ -10,6 +10,7 @@ import RxCocoa
 import Resolver
 
 final class WebtoonViewModel: BaseViewModel {
+  @Injected var webtoonInteractor: WebtoonInteractable
   struct Event {
   }
   

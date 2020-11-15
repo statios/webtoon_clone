@@ -12,4 +12,6 @@ struct Device {
   static let height: CGFloat = UIScreen.main.bounds.height
   static let statusBarHeight: CGFloat = UIApplication.shared
     .window?.windowScene?.statusBarManager?.statusBarFrame.height ?? CGFloat()
+  static let navigationBarHeight: CGFloat = BaseNavigationController(rootViewController: UIViewController())
+    .navigationBar.frame.height
 }

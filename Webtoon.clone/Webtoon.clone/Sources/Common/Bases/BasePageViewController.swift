@@ -15,6 +15,8 @@ class BasePageViewController: UIPageViewController {
   var pageViewControllers = [UIViewController]()
   var currentPage = BehaviorRelay<Int>(value: 0)
   
+  lazy var pageBar = UIView()
+  
   init() {
     super.init(transitionStyle: .scroll,
                navigationOrientation: .horizontal,
