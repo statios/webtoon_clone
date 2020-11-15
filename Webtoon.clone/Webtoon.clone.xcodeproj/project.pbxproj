@@ -10,6 +10,16 @@
 		AF432724255FDCDE005053F6 /* WebtoonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432723255FDCDE005053F6 /* WebtoonListViewController.swift */; };
 		AF432729255FE5EE005053F6 /* UITabBar+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */; };
 		AF432731255FECD7005053F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432730255FECD7005053F6 /* UIViewController.swift */; };
+		AF43273825611F15005053F6 /* PageBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43273725611F15005053F6 /* PageBar.swift */; };
+		AF43274025611F21005053F6 /* PageBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43273F25611F21005053F6 /* PageBarItem.swift */; };
+		AF43274525611F3B005053F6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43274425611F3B005053F6 /* BaseView.swift */; };
+		AF43274A25611F83005053F6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43274925611F83005053F6 /* Font.swift */; };
+		AF43274F25611F9F005053F6 /* UIButton+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43274E25611F9F005053F6 /* UIButton+Chainable.swift */; };
+		AF43275425612013005053F6 /* UIStackView+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43275325612013005053F6 /* UIStackView+Chainable.swift */; };
+		AF43275925612051005053F6 /* UIViewController+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43275825612051005053F6 /* UIViewController+Chainable.swift */; };
+		AF43275E256123B5005053F6 /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43275D256123B5005053F6 /* Webtoon.swift */; };
+		AF432763256124B6005053F6 /* webtoonList.json in Resources */ = {isa = PBXBuildFile; fileRef = AF432762256124B6005053F6 /* webtoonList.json */; };
+		AF43276825612BAB005053F6 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43276725612BAB005053F6 /* Padding.swift */; };
 		AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6DBF4C255F828000038C6C /* AppDelegate.swift */; };
 		AF6DBF56255F828000038C6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF55255F828000038C6C /* Images.xcassets */; };
 		AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF57255F828000038C6C /* LaunchScreen.storyboard */; };
@@ -108,6 +118,16 @@
 		AF432723255FDCDE005053F6 /* WebtoonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebtoonListViewController.swift; sourceTree = "<group>"; };
 		AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Chainable.swift"; sourceTree = "<group>"; };
 		AF432730255FECD7005053F6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		AF43273725611F15005053F6 /* PageBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBar.swift; sourceTree = "<group>"; };
+		AF43273F25611F21005053F6 /* PageBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBarItem.swift; sourceTree = "<group>"; };
+		AF43274425611F3B005053F6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		AF43274925611F83005053F6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		AF43274E25611F9F005053F6 /* UIButton+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Chainable.swift"; sourceTree = "<group>"; };
+		AF43275325612013005053F6 /* UIStackView+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Chainable.swift"; sourceTree = "<group>"; };
+		AF43275825612051005053F6 /* UIViewController+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Chainable.swift"; sourceTree = "<group>"; };
+		AF43275D256123B5005053F6 /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
+		AF432762256124B6005053F6 /* webtoonList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webtoonList.json; sourceTree = "<group>"; };
+		AF43276725612BAB005053F6 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
 		AF6DBF49255F828000038C6C /* Webtoon.clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Webtoon.clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6DBF4C255F828000038C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6DBF55255F828000038C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -218,6 +238,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF43273625611F05005053F6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AF43273725611F15005053F6 /* PageBar.swift */,
+				AF43273F25611F21005053F6 /* PageBarItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		AF6DBF40255F828000038C6C = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC702B8255F85C300104FA6 /* Bases */,
+				AF43273625611F05005053F6 /* Components */,
 				AFC702E3255F8EA400104FA6 /* Constants */,
 				AFC702C1255F861400104FA6 /* Utilities */,
 				AFC70324255F9B3D00104FA6 /* Extensions */,
@@ -369,6 +399,7 @@
 				AFDAC188255FA3A500797E1E /* BaseService.swift */,
 				AFDAC257255FD2FE00797E1E /* BaseCollectionViewCell.swift */,
 				AFDAC25C255FD3A100797E1E /* BaseCollectionView.swift */,
+				AF43274425611F3B005053F6 /* BaseView.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -400,6 +431,8 @@
 				AFC702E4255F8EAE00104FA6 /* Image.swift */,
 				AFDAC225255FC61E00797E1E /* Text.swift */,
 				AFDAC261255FD48200797E1E /* Device.swift */,
+				AF43274925611F83005053F6 /* Font.swift */,
+				AF43276725612BAB005053F6 /* Padding.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -413,6 +446,9 @@
 				AFDAC274255FD80A00797E1E /* UICollectionView+Chainable.swift */,
 				AFC70304255F912F00104FA6 /* UIImageView+Chainable.swift */,
 				AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */,
+				AF43274E25611F9F005053F6 /* UIButton+Chainable.swift */,
+				AF43275325612013005053F6 /* UIStackView+Chainable.swift */,
+				AF43275825612051005053F6 /* UIViewController+Chainable.swift */,
 			);
 			path = Chainable;
 			sourceTree = "<group>";
@@ -480,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDAC180255FA31E00797E1E /* WebtoonResponse.swift */,
+				AF43275D256123B5005053F6 /* Webtoon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -488,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDAC1A0255FA75500797E1E /* splash.json */,
+				AF432762256124B6005053F6 /* webtoonList.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -707,6 +745,7 @@
 				AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */,
 				AFDAC1A1255FA75500797E1E /* splash.json in Resources */,
 				AFDAC21B255FC59D00797E1E /* Localizable.strings in Resources */,
+				AF432763256124B6005053F6 /* webtoonList.json in Resources */,
 				AF6DBF56255F828000038C6C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +783,8 @@
 				AFDAC1EA255FACC300797E1E /* SettingInteractor.swift in Sources */,
 				AFC70320255F9B2500104FA6 /* BaseTabBarController.swift in Sources */,
 				AFDAC189255FA3A500797E1E /* BaseService.swift in Sources */,
+				AF43273825611F15005053F6 /* PageBar.swift in Sources */,
+				AF43274025611F21005053F6 /* PageBarItem.swift in Sources */,
 				AFDAC13F255F9F3D00797E1E /* ObservableType.swift in Sources */,
 				AFC702C4255F862F00104FA6 /* Log.swift in Sources */,
 				AF432731255FECD7005053F6 /* UIViewController.swift in Sources */,
@@ -756,6 +797,7 @@
 				AFC7029A255F854B00104FA6 /* AppNavigator.swift in Sources */,
 				AFDAC14D255FA19B00797E1E /* NetworkProvider.swift in Sources */,
 				AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */,
+				AF43276825612BAB005053F6 /* Padding.swift in Sources */,
 				AF432724255FDCDE005053F6 /* WebtoonListViewController.swift in Sources */,
 				AFDAC268255FD72800797E1E /* UIApplication.swift in Sources */,
 				AFC70305255F912F00104FA6 /* UIImageView+Chainable.swift in Sources */,
@@ -774,8 +816,10 @@
 				AFDAC24E255FCFE300797E1E /* UILabel + Chainable.swift in Sources */,
 				AFDAC1FF255FACE300797E1E /* WebtoonNavigator.swift in Sources */,
 				AFDAC1C1255FAC5C00797E1E /* WebtoonViewModel.swift in Sources */,
+				AF43274F25611F9F005053F6 /* UIButton+Chainable.swift in Sources */,
 				AFDAC209255FC4DC00797E1E /* MainTabBarItem.swift in Sources */,
 				AFC702CF255F869C00104FA6 /* BaseViewModel.swift in Sources */,
+				AF43275925612051005053F6 /* UIViewController+Chainable.swift in Sources */,
 				AFDAC249255FCDE900797E1E /* WebtoonListViewModel.swift in Sources */,
 				AFC702B0255F85A000104FA6 /* SplashNavigator.swift in Sources */,
 				AFDAC181255FA31E00797E1E /* WebtoonResponse.swift in Sources */,
@@ -784,12 +828,16 @@
 				AFC702D4255F86D300104FA6 /* BaseNavigator.swift in Sources */,
 				AFC70327255F9B7400104FA6 /* UIViewController+Rx.swift in Sources */,
 				AFDAC1EF255FACCC00797E1E /* SettingNavigator.swift in Sources */,
+				AF43275425612013005053F6 /* UIStackView+Chainable.swift in Sources */,
 				AFDAC275255FD80A00797E1E /* UICollectionView+Chainable.swift in Sources */,
 				AFDAC163255FA29900797E1E /* WebtoonSampleService.swift in Sources */,
 				AFDAC1D0255FAC7600797E1E /* ChallengeViewModel.swift in Sources */,
 				AFDAC258255FD2FE00797E1E /* BaseCollectionViewCell.swift in Sources */,
 				AFDAC1C6255FAC6300797E1E /* WebtoonInteractor.swift in Sources */,
+				AF43275E256123B5005053F6 /* Webtoon.swift in Sources */,
 				AFC702E5255F8EAE00104FA6 /* Image.swift in Sources */,
+				AF43274A25611F83005053F6 /* Font.swift in Sources */,
+				AF43274525611F3B005053F6 /* BaseView.swift in Sources */,
 				AFDAC226255FC61E00797E1E /* Text.swift in Sources */,
 				AFDAC198255FA64C00797E1E /* BaseInteractor.swift in Sources */,
 			);

@@ -37,8 +37,8 @@ class BaseNavigationController: UINavigationController {
   }
   
   @objc dynamic func setupUI() {
-//    navigationBar.barTintColor = Color.white
-//    navigationBar.isTranslucent = true
+    navigationBar.barTintColor = Color.white
+    navigationBar.isTranslucent = true
   }
   
   @objc dynamic func setupBinding() {

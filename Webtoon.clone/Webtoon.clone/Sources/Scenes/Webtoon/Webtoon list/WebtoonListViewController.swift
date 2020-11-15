@@ -18,7 +18,6 @@ final class WebtoonListViewController: BaseViewController {
   @Injected var navigator: WebtoonNavigator
   
   private let webtoonListView = BaseCollectionView()
-
 }
 
 extension WebtoonListViewController {
@@ -32,22 +31,12 @@ extension WebtoonListViewController {
       .minimumInteritemSpacing(0)
       .bounces(false)
       .add(to: view)
+      .makeConstraints { (make) in
+        make.leading.trailing.bottom.equalToSuperview()
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+          .offset(BasePageViewController.Metric.pageBarHeight)
+      }
     
-    webtoonListView.frame = CGRect(x: 0,
-                                   y: WebtoonViewController.Metric.bannerHeight + WebtoonViewController.Metric.pageBarHeight,
-                                   width: Device.width,
-                                   height: Device.height)
-    
-    let kkk = [UIColor.red, UIColor.yellow, .green,
-               .blue, UIColor.red, UIColor.yellow,
-               .green, .blue, UIColor.red, UIColor.yellow,
-               .green, .blue, UIColor.red, UIColor.yellow,
-               .green, .blue]
-    Observable.just(kkk)
-      .bind(to: webtoonListView.rx.items(
-              cellIdentifier: WebtoonListCell.className)) { (index, color, cell) in
-        cell.contentView.backgroundColor = color
-      }.disposed(by: disposeBag)
   }
 }
 
@@ -55,25 +44,16 @@ extension WebtoonListViewController {
   override func setupBinding() {
     super.setupBinding()
     let event = WebtoonListViewModel.Event(
-      didScroll: webtoonListView.rx.contentOffset.asObservable(),
-      didEndDrag: webtoonListView.rx.didEndDragging.asObservable()
+      onAppear: rx.viewWillAppear.void()
     )
     let state = viewModel.reduce(event: event)
     
-    state.navigationBarYPosition
-      .drive(onNext: { [weak self] in
-        self?.navigationController?.navigationBar.bounds.origin.y = $0
-      }).disposed(by: disposeBag)
-    
-    state.pageBarYPosition
-      .drive(onNext: { [weak self] in
-        self?.pageViewController?.pageBar.frame.origin.y = $0
-      }).disposed(by: disposeBag)
-    
-    state.webtoonListYPosition
-      .drive(onNext: { [weak self] in
-        self?.webtoonListView.frame.origin.y = $0
-        self?.webtoonListView.frame.size.height = Device.height - $0
-      }).disposed(by: disposeBag)
+    state.webtoons.asObservable()
+      .bind(to: webtoonListView.rx.items(
+              cellIdentifier: WebtoonListCell.className))
+      { (index, webtoon, cell) in
+        guard let cell = cell as? WebtoonListCell else { return }
+        cell.webtoon.accept(webtoon)
+      }.disposed(by: disposeBag)
   }
 }

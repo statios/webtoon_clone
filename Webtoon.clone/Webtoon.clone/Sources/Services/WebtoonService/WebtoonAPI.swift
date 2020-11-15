@@ -10,6 +10,7 @@ import Moya
 
 enum WebtoonAPI {
   case splash
+  case webtoonList(weekday: Int)
 }
 
 extension WebtoonAPI: TargetType {
@@ -21,24 +22,30 @@ extension WebtoonAPI: TargetType {
   var path: String { //fake
     switch self {
     case .splash: return "/splash"
+    case .webtoonList: return "/webtoon/list"
     }
   }
   
   var method: Moya.Method {
     switch self {
     case .splash: return .get
+    case .webtoonList: return .get
     }
   }
   
   var sampleData: Data {
     switch self {
     case .splash: return getSampleData(name: "splash")
+    case .webtoonList: return getSampleData(name: "webtoonList")
     }
   }
   
   var task: Task {
     switch self {
     case .splash: return .requestPlain
+    case .webtoonList(let weekday): return .requestParameters(
+      parameters: ["weekday": weekday],
+      encoding: JSONEncoding.default)
     }
   }
   

@@ -11,11 +11,16 @@ import RxCocoa
 
 class BasePageViewController: UIPageViewController {
   
+  struct Metric {
+    static let pageBarHeight: CGFloat = 44
+  }
+  
   var disposeBag = DisposeBag()
-  var pageViewControllers = [UIViewController]()
+  
   var currentPage = BehaviorRelay<Int>(value: 0)
   
-  lazy var pageBar = UIView()
+  var pageViewControllers = [UIViewController]()
+  var pageBar = PageBar()
   
   init() {
     super.init(transitionStyle: .scroll,
@@ -46,19 +51,74 @@ class BasePageViewController: UIPageViewController {
   }
   
   @objc dynamic func setupUI() {
+    pageBar.asChainable()
+      .add(to: view)
+      .makeConstraints { (make) in
+        make.leading.trailing.equalToSuperview()
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        make.height.equalTo(Metric.pageBarHeight)
+      }
   }
   
   @objc dynamic func setupBinding() {
+    pageBar.selectedPage
+      .withPrevious(startWith: 0)
+      .subscribe(onNext: { [weak self] (previous, current) in
+        let direction: NavigationDirection = previous <= current ? .forward : .reverse
+        self?.pageBar.currentPage.accept(current)
+        self?.moveTo(page: current, direction: direction)
+      }).disposed(by: disposeBag)
   }
   
   func setPageViewControllers(_ viewControllers: [UIViewController]) {
-    self.pageViewControllers = viewControllers
-    self.setViewControllers([viewControllers.first].compactMap { $0 },
-                            direction: .forward,
+    pageViewControllers = viewControllers
+    setViewControllers([viewControllers.first].compactMap { $0 },
+                       direction: .forward,
+                       animated: true,
+                       completion: nil)
+    pageBar.setPageBarItems(viewControllers)
+    let scrollView = view.subviews.filter { $0 is UIScrollView }.first as! UIScrollView
+    scrollView.delegate = self
+  }
+  func selectedText(color: UIColor?) {
+    pageBar.selectedBarView.backgroundColor = color
+    pageBar.pageBarItems.enumerated().forEach { (offset, pageBarItem) in
+      pageBarItem.selectedFontColor = color
+      pageBarItem.isSelected.accept(offset == currentPage.value)
+    }
+  }
+  
+  func unselectedText(color: UIColor?) {
+    pageBar.pageBarItems.enumerated().forEach { (offset, pageBarItem) in
+      pageBarItem.unselectedFontColor = color
+      pageBarItem.isSelected.accept(offset == currentPage.value)
+    }
+  }
+  
+  func selected(font: UIFont?) {
+    pageBar.pageBarItems.enumerated().forEach { (offset, pageBarItem) in
+      pageBarItem.selectedFont = font
+      pageBarItem.isSelected.accept(offset == currentPage.value)
+    }
+  }
+
+  func unselected(font: UIFont?) {
+    pageBar.pageBarItems.enumerated().forEach { (offset, pageBarItem) in
+      pageBarItem.unselectedFont = font
+      pageBarItem.isSelected.accept(offset == currentPage.value)
+    }
+  }
+  
+  func pageBar(style: PageBarStyle) {
+    pageBar.pageBarStyle.accept(style)
+  }
+  
+  func moveTo(page: Int, direction: NavigationDirection) {
+    self.setViewControllers([pageViewControllers[page]],
+                            direction: direction,
                             animated: true,
                             completion: nil)
   }
-  
 }
 
 extension BasePageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
@@ -99,6 +159,41 @@ extension BasePageViewController: UIPageViewControllerDataSource, UIPageViewCont
     if let currentViewController = pageViewController.viewControllers?.first,
        let index = pageViewControllers.firstIndex(of: currentViewController) {
       currentPage.accept(index)
+      pageBar.currentPage.accept(index)
     }
+  }
+}
+
+extension BasePageViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+  }
+}
+
+extension Chain where Origin: BasePageViewController {
+  @discardableResult
+  func pageBar(style: PageBarStyle) -> Chain {
+    self.origin.pageBar(style: style)
+    return self
+  }
+  @discardableResult
+  func selectedText(color: UIColor?) -> Chain {
+    self.origin.selectedText(color: color)
+    return self
+  }
+  @discardableResult
+  func unselectedText(color: UIColor?) -> Chain {
+    self.origin.unselectedText(color: color)
+    return self
+  }
+  @discardableResult
+  func selectedText(font: UIFont?) -> Chain {
+    self.origin.selected(font: font)
+    return self
+  }
+  @discardableResult
+  func unselectedText(font: UIFont?) -> Chain {
+    self.origin.unselected(font: font)
+    return self
   }
 }

@@ -11,44 +11,45 @@ import RxCocoa
 import Resolver
 
 final class WebtoonViewController: BasePageViewController {
-  struct Metric {
-    static let bannerHeight = CGFloat(144)
-    static let pageBarHeight = CGFloat(48)
-    static let bannerFrame = CGRect(x: 0, y: 0, width: Device.width, height: Metric.bannerHeight)
-    static let pageBarFrame = CGRect(x: 0, y: 0, width: Device.width, height: Metric.pageBarHeight)
-  }
-  
   @Injected var viewModel: WebtoonViewModel
   @Injected var navigator: WebtoonNavigator
-  
-  private let bannerView = UIView()
 }
 
 extension WebtoonViewController {
+  override func initialize() {
+    super.initialize()
+    navigator.setViewControllers(in: self)
+  }
+  
   override func setupUI() {
     super.setupUI()
-    navigator
-      .setViewControllers(in: self)
+    
+    self.asChainable()
+      .pageBar(style: .fit)
+      .selectedText(color: Color.malachite)
+      .selectedText(font: Font.small.bold())
+      .unselectedText(color: Color.black)
+      .unselectedText(font: Font.small)
     
     view.asChainable()
       .background(color: Color.white)
     
-    bannerView.asChainable()
-      .background(color: .brown)
-      .frame(Metric.bannerFrame)
-      .add(to: view)
-    
     pageBar.asChainable()
-      .frame(Metric.pageBarFrame)
       .background(color: UIColor.systemPurple)
       .add(to: view)
+      .makeConstraints{ (make) in
+        make.leading.trailing.equalToSuperview()
+        make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      }
   }
 }
 
 extension WebtoonViewController {
   override func setupBinding() {
     super.setupBinding()
-    let event = WebtoonViewModel.Event()
+    let event = WebtoonViewModel.Event(
+      currentPage: currentPage.asObservable()
+    )
     let state = viewModel.reduce(event: event)
   }
 }

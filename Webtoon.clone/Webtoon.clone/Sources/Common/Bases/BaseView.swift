@@ -1,20 +1,17 @@
 //
-//  BaseCollectionViewCell.swift
+//  BaseView.swift
 //  Webtoon.clone
 //
-//  Created by Stat.So on 2020/11/14.
+//  Created by Stat.So on 2020/11/15.
 //
 
+import Foundation
 import UIKit
 import RxSwift
 
-class BaseCollectionViewCell: UICollectionViewCell {
+class BaseView: UIView {
   
   var disposeBag = DisposeBag()
-  
-  open override func prepareForReuse() {
-    super.prepareForReuse()
-  }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -23,14 +20,15 @@ class BaseCollectionViewCell: UICollectionViewCell {
   }
   
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
+    fatalError("init(coder:) has not been implemented")
   }
   
   @objc dynamic func setupUI() {
-
+    
   }
   
   @objc dynamic func setupBinding() {
     
   }
 }
+

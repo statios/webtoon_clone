@@ -12,8 +12,6 @@ import Resolver
 class SplashViewController: BaseViewController {
   @Injected var viewModel: SplashViewModel
   @Injected var navigator: SplashNavigator
-  
-  private let logoImage = UIImageView()
 }
 
 extension SplashViewController {
@@ -21,14 +19,6 @@ extension SplashViewController {
     super.setupUI()
     view.asChainable()
       .background(color: Color.malachite)
-    
-    logoImage.asChainable()
-      .background(color: Color.empty)
-      .add(to: view)
-      .makeConstraints { (make) in
-        make.center.equalToSuperview()
-        make.size.equalTo(220)
-      }
   }
 }
 
