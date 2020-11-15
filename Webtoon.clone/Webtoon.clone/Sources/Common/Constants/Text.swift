@@ -17,4 +17,12 @@ struct Text {
   static let fri = "fri".localized
   static let sat = "sat".localized
   static let sun = "sun".localized
+  //challenge cateogry
+  static let all = "all".localized
+  static let comedy = "comedy".localized
+  static let action = "action".localized
+  static let sports = "sports".localized
+  static let drama = "drama".localized
+  
+  
 }

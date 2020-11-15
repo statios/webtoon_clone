@@ -24,6 +24,7 @@ extension MainNavigator {
     Resolver.register { WebtoonInteractor() }
       .implements(WebtoonInteractable.self)
     Resolver.register { ChallengeNavigator() }
+      .scope(Resolver.shared)
     Resolver.register { ChallengeViewModel() }
     Resolver.register { ChallengeInteractor() }
       .implements(ChallengeInteractable.self)

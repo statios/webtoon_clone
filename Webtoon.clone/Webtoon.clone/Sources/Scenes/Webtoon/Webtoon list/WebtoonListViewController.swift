@@ -29,7 +29,6 @@ extension WebtoonListViewController {
       .itemSize(Metric.cellSize)
       .minimumLineSpacing(0)
       .minimumInteritemSpacing(0)
-      .bounces(false)
       .add(to: view)
       .makeConstraints { (make) in
         make.leading.trailing.bottom.equalToSuperview()
@@ -48,8 +47,8 @@ extension WebtoonListViewController {
     )
     let state = viewModel.reduce(event: event)
     
-    state.webtoons.asObservable()
-      .bind(to: webtoonListView.rx.items(
+    state.webtoons
+      .drive(webtoonListView.rx.items(
               cellIdentifier: WebtoonListCell.className))
       { (index, webtoon, cell) in
         guard let cell = cell as? WebtoonListCell else { return }

@@ -16,19 +16,13 @@ final class WebtoonListCell: BaseCollectionViewCell {
   
   let webtoon = PublishRelay<Webtoon>()
   
-  private let imageView = UIImageView()
+  private let imageView = BaseImageView()
   private let titleLabel = UILabel()
   private let ratingLabel = UILabel()
   private let authorLabel = UILabel()
-  
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    imageView.image = nil
-    titleLabel.text = nil
-    ratingLabel.text = nil
-    authorLabel.text = nil
-  }
-  
+}
+
+extension WebtoonListCell {
   override func setupUI() {
     super.setupUI()
     contentView.asChainable()
@@ -70,6 +64,9 @@ final class WebtoonListCell: BaseCollectionViewCell {
         make.bottom.equalTo(titleLabel.snp.top).offset(-Padding.extraSmall)
       }
   }
+}
+
+extension WebtoonListCell {
   override func setupBinding() {
     super.setupBinding()
     webtoon.map { $0.title }

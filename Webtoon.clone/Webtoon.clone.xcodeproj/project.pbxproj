@@ -95,6 +95,16 @@
 		AFDAC268255FD72800797E1E /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC267255FD72800797E1E /* UIApplication.swift */; };
 		AFDAC270255FD76400797E1E /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC26F255FD76400797E1E /* NSObject.swift */; };
 		AFDAC275255FD80A00797E1E /* UICollectionView+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC274255FD80A00797E1E /* UICollectionView+Chainable.swift */; };
+		AFF210AA25617F2000485149 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210A925617F2000485149 /* BaseImageView.swift */; };
+		AFF210B02561801100485149 /* ChallengeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210AF2561801100485149 /* ChallengeListViewController.swift */; };
+		AFF210B82561801800485149 /* ChallengeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210B72561801800485149 /* ChallengeListViewModel.swift */; };
+		AFF210BD2561802700485149 /* ChallengeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210BC2561802700485149 /* ChallengeListCell.swift */; };
+		AFF210C2256180B200485149 /* ChallengePageBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210C1256180B200485149 /* ChallengePageBarItem.swift */; };
+		AFF210C72561832200485149 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210C62561832200485149 /* BaseTableView.swift */; };
+		AFF210CD2561841000485149 /* UITableView+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210CC2561841000485149 /* UITableView+Chainable.swift */; };
+		AFF210D22561845F00485149 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210D12561845F00485149 /* BaseTableViewCell.swift */; };
+		AFF210D72561870600485149 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF210D62561870600485149 /* Challenge.swift */; };
+		AFF210DC2561883600485149 /* challengeList.json in Resources */ = {isa = PBXBuildFile; fileRef = AFF210DB2561883600485149 /* challengeList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +210,16 @@
 		AFDAC267255FD72800797E1E /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		AFDAC26F255FD76400797E1E /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		AFDAC274255FD80A00797E1E /* UICollectionView+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Chainable.swift"; sourceTree = "<group>"; };
+		AFF210A925617F2000485149 /* BaseImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
+		AFF210AF2561801100485149 /* ChallengeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewController.swift; sourceTree = "<group>"; };
+		AFF210B72561801800485149 /* ChallengeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListViewModel.swift; sourceTree = "<group>"; };
+		AFF210BC2561802700485149 /* ChallengeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListCell.swift; sourceTree = "<group>"; };
+		AFF210C1256180B200485149 /* ChallengePageBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePageBarItem.swift; sourceTree = "<group>"; };
+		AFF210C62561832200485149 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		AFF210CC2561841000485149 /* UITableView+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Chainable.swift"; sourceTree = "<group>"; };
+		AFF210D12561845F00485149 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		AFF210D62561870600485149 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		AFF210DB2561883600485149 /* challengeList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = challengeList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,7 +419,10 @@
 				AFDAC188255FA3A500797E1E /* BaseService.swift */,
 				AFDAC257255FD2FE00797E1E /* BaseCollectionViewCell.swift */,
 				AFDAC25C255FD3A100797E1E /* BaseCollectionView.swift */,
+				AFF210C62561832200485149 /* BaseTableView.swift */,
+				AFF210D12561845F00485149 /* BaseTableViewCell.swift */,
 				AF43274425611F3B005053F6 /* BaseView.swift */,
+				AFF210A925617F2000485149 /* BaseImageView.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -444,6 +467,7 @@
 				AFC702FF255F90C500104FA6 /* UIView+Chainable.swift */,
 				AFDAC24D255FCFE300797E1E /* UILabel + Chainable.swift */,
 				AFDAC274255FD80A00797E1E /* UICollectionView+Chainable.swift */,
+				AFF210CC2561841000485149 /* UITableView+Chainable.swift */,
 				AFC70304255F912F00104FA6 /* UIImageView+Chainable.swift */,
 				AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */,
 				AF43274E25611F9F005053F6 /* UIButton+Chainable.swift */,
@@ -517,6 +541,7 @@
 			children = (
 				AFDAC180255FA31E00797E1E /* WebtoonResponse.swift */,
 				AF43275D256123B5005053F6 /* Webtoon.swift */,
+				AFF210D62561870600485149 /* Challenge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -526,6 +551,7 @@
 			children = (
 				AFDAC1A0255FA75500797E1E /* splash.json */,
 				AF432762256124B6005053F6 /* webtoonList.json */,
+				AFF210DB2561883600485149 /* challengeList.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -564,6 +590,8 @@
 				AFDAC1CA255FAC6D00797E1E /* ChallengeViewController.swift */,
 				AFDAC1CF255FAC7600797E1E /* ChallengeViewModel.swift */,
 				AFDAC1D4255FAC8300797E1E /* ChallengeInteractor.swift */,
+				AFF210C1256180B200485149 /* ChallengePageBarItem.swift */,
+				AFF210AE25617FFF00485149 /* Challenge list */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -613,6 +641,16 @@
 				AF432730255FECD7005053F6 /* UIViewController.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		AFF210AE25617FFF00485149 /* Challenge list */ = {
+			isa = PBXGroup;
+			children = (
+				AFF210AF2561801100485149 /* ChallengeListViewController.swift */,
+				AFF210B72561801800485149 /* ChallengeListViewModel.swift */,
+				AFF210BC2561802700485149 /* ChallengeListCell.swift */,
+			);
+			path = "Challenge list";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -744,6 +782,7 @@
 				AFC702F2255F8FD600104FA6 /* Colors.xcassets in Resources */,
 				AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */,
 				AFDAC1A1255FA75500797E1E /* splash.json in Resources */,
+				AFF210DC2561883600485149 /* challengeList.json in Resources */,
 				AFDAC21B255FC59D00797E1E /* Localizable.strings in Resources */,
 				AF432763256124B6005053F6 /* webtoonList.json in Resources */,
 				AF6DBF56255F828000038C6C /* Images.xcassets in Resources */,
@@ -772,10 +811,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDAC231255FC76300797E1E /* BaseNavigationController.swift in Sources */,
+				AFF210D72561870600485149 /* Challenge.swift in Sources */,
 				AFC702A3255F859000104FA6 /* SplashViewController.swift in Sources */,
 				AFDAC1E5255FACBD00797E1E /* SettingViewModel.swift in Sources */,
 				AFC702FB255F90A800104FA6 /* Chainable.swift in Sources */,
 				AFDAC1B9255FAC5600797E1E /* WebtoonViewController.swift in Sources */,
+				AFF210BD2561802700485149 /* ChallengeListCell.swift in Sources */,
 				AFDAC25D255FD3A100797E1E /* BaseCollectionView.swift in Sources */,
 				AFDAC236255FCB9800797E1E /* BasePageViewController.swift in Sources */,
 				AFDAC175255FA2C300797E1E /* WebtoonService.swift in Sources */,
@@ -789,6 +830,8 @@
 				AFC702C4255F862F00104FA6 /* Log.swift in Sources */,
 				AF432731255FECD7005053F6 /* UIViewController.swift in Sources */,
 				AFDAC193255FA61B00797E1E /* SplashInteractor.swift in Sources */,
+				AFF210C72561832200485149 /* BaseTableView.swift in Sources */,
+				AFF210B82561801800485149 /* ChallengeListViewModel.swift in Sources */,
 				AFDAC22C255FC70D00797E1E /* String.swift in Sources */,
 				AFDAC1D5255FAC8300797E1E /* ChallengeInteractor.swift in Sources */,
 				AFC702ED255F8F1100104FA6 /* Color.swift in Sources */,
@@ -797,7 +840,10 @@
 				AFC7029A255F854B00104FA6 /* AppNavigator.swift in Sources */,
 				AFDAC14D255FA19B00797E1E /* NetworkProvider.swift in Sources */,
 				AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */,
+				AFF210B02561801100485149 /* ChallengeListViewController.swift in Sources */,
+				AFF210C2256180B200485149 /* ChallengePageBarItem.swift in Sources */,
 				AF43276825612BAB005053F6 /* Padding.swift in Sources */,
+				AFF210AA25617F2000485149 /* BaseImageView.swift in Sources */,
 				AF432724255FDCDE005053F6 /* WebtoonListViewController.swift in Sources */,
 				AFDAC268255FD72800797E1E /* UIApplication.swift in Sources */,
 				AFC70305255F912F00104FA6 /* UIImageView+Chainable.swift in Sources */,
@@ -825,6 +871,7 @@
 				AFDAC181255FA31E00797E1E /* WebtoonResponse.swift in Sources */,
 				AFC702BA255F85CA00104FA6 /* BaseViewController.swift in Sources */,
 				AFDAC262255FD48200797E1E /* Device.swift in Sources */,
+				AFF210D22561845F00485149 /* BaseTableViewCell.swift in Sources */,
 				AFC702D4255F86D300104FA6 /* BaseNavigator.swift in Sources */,
 				AFC70327255F9B7400104FA6 /* UIViewController+Rx.swift in Sources */,
 				AFDAC1EF255FACCC00797E1E /* SettingNavigator.swift in Sources */,
@@ -834,6 +881,7 @@
 				AFDAC1D0255FAC7600797E1E /* ChallengeViewModel.swift in Sources */,
 				AFDAC258255FD2FE00797E1E /* BaseCollectionViewCell.swift in Sources */,
 				AFDAC1C6255FAC6300797E1E /* WebtoonInteractor.swift in Sources */,
+				AFF210CD2561841000485149 /* UITableView+Chainable.swift in Sources */,
 				AF43275E256123B5005053F6 /* Webtoon.swift in Sources */,
 				AFC702E5255F8EAE00104FA6 /* Image.swift in Sources */,
 				AF43274A25611F83005053F6 /* Font.swift in Sources */,

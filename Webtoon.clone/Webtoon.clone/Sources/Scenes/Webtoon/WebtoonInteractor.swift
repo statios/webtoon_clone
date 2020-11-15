@@ -10,16 +10,13 @@ import RxCocoa
 import RxSwift
 
 protocol WebtoonInteractable {
-  func requestWebtoonList() -> Single<WebtoonResponse<[Webtoon]>>
-  var currentPage: BehaviorRelay<Int> { get }
+  func requestWebtoonList(_ weekday: Int) -> Single<WebtoonResponse<[Webtoon]>>
 }
 
 final class WebtoonInteractor: BaseInteractor, WebtoonInteractable {
   @Injected var webtoonService: WebtoonServiceType
   
-  var currentPage = BehaviorRelay<Int>(value: 0)
-  
-  func requestWebtoonList() -> Single<WebtoonResponse<[Webtoon]>> {
-    return webtoonService.request(to: .webtoonList(weekday: currentPage.value), type: [Webtoon].self)
+  func requestWebtoonList(_ weekday: Int) -> Single<WebtoonResponse<[Webtoon]>> {
+    return webtoonService.request(to: .webtoonList(weekday: weekday), type: [Webtoon].self)
   }
 }

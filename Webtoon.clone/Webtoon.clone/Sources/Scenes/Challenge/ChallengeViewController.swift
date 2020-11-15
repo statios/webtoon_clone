@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import Resolver
 
-final class ChallengeViewController: BaseViewController {
+final class ChallengeViewController: BasePageViewController {
   
   @Injected var viewModel: ChallengeViewModel
   @Injected var navigator: ChallengeNavigator
@@ -17,8 +17,22 @@ final class ChallengeViewController: BaseViewController {
 }
 
 extension ChallengeViewController {
+  override func initialize() {
+    super.initialize()
+    navigator.setViewControllers(in: self)
+  }
   override func setupUI() {
     super.setupUI()
+    
+    self.asChainable()
+      .pageBar(style: .fill)
+      .selectedText(color: Color.malachite)
+      .selectedText(font: Font.small.bold())
+      .unselectedText(color: Color.black)
+      .unselectedText(font: Font.small)
+    
+    view.asChainable()
+      .background(color: Color.white)
   }
 }
 

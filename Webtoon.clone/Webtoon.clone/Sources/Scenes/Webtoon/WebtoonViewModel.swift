@@ -13,7 +13,7 @@ final class WebtoonViewModel: BaseViewModel {
   @Injected var webtoonInteractor: WebtoonInteractable
   
   struct Event {
-    let currentPage: Observable<Int>
+    
   }
   
   struct State {
@@ -23,9 +23,6 @@ final class WebtoonViewModel: BaseViewModel {
 
 extension WebtoonViewModel {
   func reduce(event: Event) -> State {
-    event.currentPage
-      .bind(to: webtoonInteractor.currentPage)
-      .disposed(by: disopseBag)
     return State()
   }
 }

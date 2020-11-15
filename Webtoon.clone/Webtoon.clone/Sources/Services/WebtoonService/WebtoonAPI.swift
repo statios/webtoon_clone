@@ -11,6 +11,7 @@ import Moya
 enum WebtoonAPI {
   case splash
   case webtoonList(weekday: Int)
+  case challengeList(category: String)
 }
 
 extension WebtoonAPI: TargetType {
@@ -23,6 +24,7 @@ extension WebtoonAPI: TargetType {
     switch self {
     case .splash: return "/splash"
     case .webtoonList: return "/webtoon/list"
+    case .challengeList: return "/challenge/list"
     }
   }
   
@@ -30,6 +32,7 @@ extension WebtoonAPI: TargetType {
     switch self {
     case .splash: return .get
     case .webtoonList: return .get
+    case .challengeList: return .get
     }
   }
   
@@ -37,6 +40,7 @@ extension WebtoonAPI: TargetType {
     switch self {
     case .splash: return getSampleData(name: "splash")
     case .webtoonList: return getSampleData(name: "webtoonList")
+    case .challengeList: return getSampleData(name: "challengeList")
     }
   }
   
@@ -45,6 +49,9 @@ extension WebtoonAPI: TargetType {
     case .splash: return .requestPlain
     case .webtoonList(let weekday): return .requestParameters(
       parameters: ["weekday": weekday],
+      encoding: JSONEncoding.default)
+    case .challengeList(let category): return .requestParameters(
+      parameters: ["category": category],
       encoding: JSONEncoding.default)
     }
   }

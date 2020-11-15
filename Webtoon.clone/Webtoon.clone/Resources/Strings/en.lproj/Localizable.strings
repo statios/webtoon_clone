@@ -16,3 +16,8 @@
 "fri" = "Fri";
 "sat" = "Sat";
 "sun" = "Sun";
+"all" = "All";
+"comedy" = "Comedy";
+"action" = "Action";
+"sports" = "Sports";
+"drama" = "Drama";

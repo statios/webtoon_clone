@@ -12,6 +12,7 @@ import UIKit
 
 final class WebtoonListViewModel: BaseViewModel {
   @Injected var webtoonInteractor: WebtoonInteractable
+  var weekday: Int?
   
   struct Event {
     let onAppear: Observable<Void>
@@ -24,13 +25,9 @@ final class WebtoonListViewModel: BaseViewModel {
 
 extension WebtoonListViewModel {
   func reduce(event: Event) -> State {
-    
-    let webtooonsReqeust = event.onAppear.take(1)
-      .flatMapLatest { [weak self] _ -> Single<WebtoonResponse<[Webtoon]>> in
-        guard let `self` = self else { return .never() }
-        return self.webtoonInteractor.requestWebtoonList()
-      }.share()
+    let webtooonsReqeust = requestWebtoons(trigger: event.onAppear.take(1))
     let webtooonsResponse = webtooonsReqeust.filter { $0.isSuccess }.compactMap { $0.data }
+//    let webtooonsFailure = webtooonsReqeust.filter { !$0.isSuccess }.compactMap { $0.message }
     return State(
       webtoons: webtooonsResponse.asDriver(onErrorJustReturn: [])
     )
@@ -38,4 +35,14 @@ extension WebtoonListViewModel {
 }
 
 extension WebtoonListViewModel {
+  private func requestWebtoons(trigger: Observable<Void>)
+  -> Observable<WebtoonResponse<[Webtoon]>> {
+    trigger
+      .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
+      .compactMap { [weak self] in self?.weekday }
+      .flatMapLatest { [weak self] weekday -> Single<WebtoonResponse<[Webtoon]>> in
+        guard let `self` = self else { return .never() }
+        return self.webtoonInteractor.requestWebtoonList(weekday)
+      }.observeOn(MainScheduler.instance).share()
+  }
 }

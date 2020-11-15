@@ -31,6 +31,7 @@ extension Resolver: ResolverRegistering {
     SplashNavigator.registerSplashScenes()
     MainNavigator.registerMainScenes()
     WebtoonNavigator.registerWebtoonScenes()
+    ChallengeNavigator.registerChallengeScenes()
   }
 }
 

@@ -13,5 +13,5 @@ import RxMoya
 
 class WebtoonService: BaseService, WebtoonServiceType {
   let provider = NetworkProvider<WebtoonAPI>(
-    stubClosure: MoyaProvider.neverStub)
+    stubClosure: MoyaProvider.neverStub) //Never call a sample data
 }

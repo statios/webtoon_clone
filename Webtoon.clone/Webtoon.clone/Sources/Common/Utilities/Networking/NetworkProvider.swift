@@ -29,14 +29,3 @@ final class NetworkProvider<Target: TargetType>: MoyaProvider<Target> {
     )
   }
 }
-
-extension PrimitiveSequence where Trait == SingleTrait, Element == Response {
-  func showIndicator(_ isShow: Bool) -> Single<Element> {
-    guard isShow else { return self }
-    return self
-      .observeOn(MainScheduler.asyncInstance)
-//      .do(onSuccess: { _ in ActivityIndicatorPrsenter.shared.show() })
-      .delay(.milliseconds(2000), scheduler: MainScheduler.asyncInstance)
-//      .do(onDispose: { ActivityIndicatorPrsenter.shared.hide() })
-  }
-}

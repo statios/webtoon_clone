@@ -23,7 +23,6 @@ extension WebtoonServiceType {
     isIndicator: Bool = false)
   -> Single<WebtoonResponse<T>> {
     return provider.rx.request(router)
-      .showIndicator(isIndicator)
       .map(WebtoonResponse<T>.self)
   }
 }

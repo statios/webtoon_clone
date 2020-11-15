@@ -8,10 +8,15 @@
 import Resolver
 
 final class ChallengeNavigator: BaseNavigator {
-  
+  func setViewControllers(in target: BasePageViewController) {
+    let viewControllers = ChallengePageBarItem.allCases.map { $0.viewController }
+    target.setPageViewControllers(viewControllers)
+  }
 }
 
 extension ChallengeNavigator {
-  
+  static func registerChallengeScenes() {
+    Resolver.register { ChallengeListViewModel() }.scope(Resolver.unique)
+  }
 }
 
