@@ -82,3 +82,29 @@ extension WebtoonListCell {
       .disposed(by: disposeBag)
   }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct WebtoonListCell_Preview: UIViewRepresentable, PreviewProvider {
+  func makeUIView(context: Context) -> WebtoonListCell {
+    WebtoonListCell()
+  }
+
+  func updateUIView(_ view: WebtoonListCell, context: Context) {
+    view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    view.webtoon.accept(Webtoon(image: "",
+                                title: "title",
+                                rating: "rating",
+                                author: "author"))
+  }
+
+  static var previews: some View {
+    WebtoonListCell_Preview()
+      .previewLayout(.fixed(width: WebtoonListViewController.Metric.cellSize.width,
+                            height: WebtoonListViewController.Metric.cellSize.height))
+  }
+}
+#endif

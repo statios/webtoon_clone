@@ -113,3 +113,31 @@ extension ChallengeListCell {
       .disposed(by: disposeBag)
   }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct ChallengeListCell_Preview: UIViewRepresentable, PreviewProvider {
+  func makeUIView(context: Context) -> ChallengeListCell {
+    ChallengeListCell()
+  }
+
+  func updateUIView(_ view: ChallengeListCell, context: Context) {
+    view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    view.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    let challenge = Challenge(thumbnail: "",
+                              title: "title",
+                              author: "author",
+                              introduce: "introduce",
+                              rating: "rating",
+                              date: "date")
+    view.challenge.accept(challenge)
+  }
+
+  static var previews: some View {
+    ChallengeListCell_Preview()
+      .previewLayout(.fixed(width: Device.width, height: CGFloat(100)))
+  }
+}
+#endif
