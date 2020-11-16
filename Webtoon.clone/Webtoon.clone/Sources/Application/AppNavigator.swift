@@ -8,33 +8,56 @@
 import UIKit
 import Resolver
 
-class AppNavigator: BaseNavigator {
-  static func presentSplashScene(in window: UIWindow?) {
-    guard let window = window else { return }
+final class AppNavigator {
+  var root: UIWindow {
+    let window = UIWindow(frame: UIScreen.main.bounds)
     window.rootViewController = SplashViewController()
     window.backgroundColor = .white
     window.makeKeyAndVisible()
+    return window
   }
-}
-
-extension AppNavigator {
-  static func registerSplashScene() {
-    Resolver.register { SplashViewModel() }
-    Resolver.register { SplashNavigator() }
-    Resolver.register { SplashInteractor() }
-      .implements(SplashInteractable.self)
+  
+  func pop(from target: UIViewController?,
+           animated: Bool = false) {
+    target?.navigationController?.popViewController(animated: animated)
   }
-  static func registerServices() {
-    #if DEBUG
-    Resolver.register {
-      WebtoonSampleService()
-    }.implements(WebtoonServiceType.self)
-    .scope(Resolver.application) //Singleton
-    #else
-    Resolver.register {
-      WebtoonService()
-    }.implements(WebtoonServiceType.self)
-    .scope(Resolver.application)
-    #endif
+  
+  func push(scene: Scene,
+            from target: UIViewController?,
+            animated: Bool = true) {
+    guard scene.hidesBottomBarWhenPushed else {
+      target?.navigationController?.pushViewController(scene.viewController, animated: animated)
+      return
+    }
+    target?.hidesBottomBarWhenPushed = true
+    target?.navigationController?.pushViewController(scene.viewController, animated: animated)
+    target?.hidesBottomBarWhenPushed = false
+  }
+  
+  func present(scene: Scene,
+               from target: UIViewController?,
+               animated: Bool = true,
+               completion: (() -> Void)? = nil) {
+    let viewController = scene.viewController
+    viewController.modalTransitionStyle = scene.transitionStyle
+    viewController.modalPresentationStyle = scene.presentationStyle
+    target?.present(viewController, animated: animated, completion: completion)
+  }
+  
+  func dismiss(from target: UIViewController?,
+               animated: Bool = true,
+               completion: (() -> Void)? = nil) {
+    target?.dismiss(animated: animated, completion: completion)
+  }
+  
+  func setTabBar(viewControllers: [UIViewController],
+                 from target: BaseTabBarController?,
+                 animated: Bool = true) {
+    target?.setViewControllers(viewControllers, animated: animated)
+  }
+  
+  func setPage(viewControllers: [UIViewController],
+                              from target: BasePageViewController?) {
+    target?.setPageViewControllers(viewControllers)
   }
 }

@@ -27,17 +27,6 @@ extension Chain where Origin: UIButton {
   }
   
   @discardableResult
-  func addBarButtonItem(_ target: UIViewController, position: Direction) -> Chain {
-    let barButtonItem = UIBarButtonItem(customView: self.origin)
-    if position == .left {
-      target.navigationItem.leftBarButtonItem = barButtonItem
-    } else if position == .right {
-      target.navigationItem.rightBarButtonItem = barButtonItem
-    }
-    return self
-  }
-  
-  @discardableResult
   func font(_ font: UIFont?) -> Chain {
     self.origin.titleLabel?.font = font
     return self
@@ -48,12 +37,5 @@ extension Chain where Origin: UIButton {
     self.origin.contentEdgeInsets = insets
     return self
   }
-}
-
-enum Direction: Int, Codable {
-  case left = 0
-  case right = 1
-  case top = 2
-  case bottom = 3
 }
 

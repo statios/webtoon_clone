@@ -12,7 +12,7 @@ import Resolver
 final class SettingViewController: BaseViewController {
   
   @Injected var viewModel: SettingViewModel
-  @Injected var navigator: SettingNavigator
+  @Injected var navigator: AppNavigator
   
 }
 

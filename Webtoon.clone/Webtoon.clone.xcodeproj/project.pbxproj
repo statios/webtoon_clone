@@ -20,6 +20,14 @@
 		AF43275E256123B5005053F6 /* Webtoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43275D256123B5005053F6 /* Webtoon.swift */; };
 		AF432763256124B6005053F6 /* webtoonList.json in Resources */ = {isa = PBXBuildFile; fileRef = AF432762256124B6005053F6 /* webtoonList.json */; };
 		AF43276825612BAB005053F6 /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43276725612BAB005053F6 /* Padding.swift */; };
+		AF58AEAD25620AD40010DCE0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AEAC25620AD40010DCE0 /* SearchViewController.swift */; };
+		AF58AEB525620ADA0010DCE0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AEB425620ADA0010DCE0 /* SearchViewModel.swift */; };
+		AF58AEBA256214FF0010DCE0 /* UITextField+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AEB9256214FF0010DCE0 /* UITextField+Chainable.swift */; };
+		AF58AECB256230750010DCE0 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AECA256230750010DCE0 /* AppDelegate+Injection.swift */; };
+		AF58AED0256230AF0010DCE0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AECF256230AF0010DCE0 /* Scene.swift */; };
+		AF58AF01256258A40010DCE0 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF00256258A40010DCE0 /* UserDefaultService.swift */; };
+		AF58AF06256258AA0010DCE0 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF05256258AA0010DCE0 /* UserDefault.swift */; };
+		AF58AF0B25625A1D0010DCE0 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */; };
 		AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6DBF4C255F828000038C6C /* AppDelegate.swift */; };
 		AF6DBF56255F828000038C6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF55255F828000038C6C /* Images.xcassets */; };
 		AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF57255F828000038C6C /* LaunchScreen.storyboard */; };
@@ -39,18 +47,15 @@
 		AFC7029A255F854B00104FA6 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC70299255F854B00104FA6 /* AppNavigator.swift */; };
 		AFC702A3255F859000104FA6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702A2255F859000104FA6 /* SplashViewController.swift */; };
 		AFC702AB255F859600104FA6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702AA255F859600104FA6 /* SplashViewModel.swift */; };
-		AFC702B0255F85A000104FA6 /* SplashNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702AF255F85A000104FA6 /* SplashNavigator.swift */; };
 		AFC702BA255F85CA00104FA6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702B9255F85CA00104FA6 /* BaseViewController.swift */; };
 		AFC702C4255F862F00104FA6 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702C3255F862F00104FA6 /* Log.swift */; };
 		AFC702CF255F869C00104FA6 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702CE255F869C00104FA6 /* BaseViewModel.swift */; };
-		AFC702D4255F86D300104FA6 /* BaseNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702D3255F86D300104FA6 /* BaseNavigator.swift */; };
 		AFC702E5255F8EAE00104FA6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702E4255F8EAE00104FA6 /* Image.swift */; };
 		AFC702ED255F8F1100104FA6 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702EC255F8F1100104FA6 /* Color.swift */; };
 		AFC702F2255F8FD600104FA6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC702F1255F8FD600104FA6 /* Colors.xcassets */; };
 		AFC702FB255F90A800104FA6 /* Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702FA255F90A800104FA6 /* Chainable.swift */; };
 		AFC70300255F90C500104FA6 /* UIView+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC702FF255F90C500104FA6 /* UIView+Chainable.swift */; };
 		AFC70305255F912F00104FA6 /* UIImageView+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC70304255F912F00104FA6 /* UIImageView+Chainable.swift */; };
-		AFC7030E255F9A6D00104FA6 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7030D255F9A6D00104FA6 /* MainNavigator.swift */; };
 		AFC70313255F9A7500104FA6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC70312255F9A7500104FA6 /* MainViewController.swift */; };
 		AFC70318255F9A7B00104FA6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC70317255F9A7B00104FA6 /* MainViewModel.swift */; };
 		AFC70320255F9B2500104FA6 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7031F255F9B2500104FA6 /* BaseTabBarController.swift */; };
@@ -76,9 +81,6 @@
 		AFDAC1E0255FACB700797E1E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1DF255FACB700797E1E /* SettingViewController.swift */; };
 		AFDAC1E5255FACBD00797E1E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1E4255FACBD00797E1E /* SettingViewModel.swift */; };
 		AFDAC1EA255FACC300797E1E /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1E9255FACC300797E1E /* SettingInteractor.swift */; };
-		AFDAC1EF255FACCC00797E1E /* SettingNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1EE255FACCC00797E1E /* SettingNavigator.swift */; };
-		AFDAC1F4255FACDA00797E1E /* ChallengeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1F3255FACDA00797E1E /* ChallengeNavigator.swift */; };
-		AFDAC1FF255FACE300797E1E /* WebtoonNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC1FE255FACE300797E1E /* WebtoonNavigator.swift */; };
 		AFDAC209255FC4DC00797E1E /* MainTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC208255FC4DC00797E1E /* MainTabBarItem.swift */; };
 		AFDAC21B255FC59D00797E1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFDAC21D255FC59D00797E1E /* Localizable.strings */; };
 		AFDAC226255FC61E00797E1E /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDAC225255FC61E00797E1E /* Text.swift */; };
@@ -138,6 +140,14 @@
 		AF43275D256123B5005053F6 /* Webtoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webtoon.swift; sourceTree = "<group>"; };
 		AF432762256124B6005053F6 /* webtoonList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = webtoonList.json; sourceTree = "<group>"; };
 		AF43276725612BAB005053F6 /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
+		AF58AEAC25620AD40010DCE0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AF58AEB425620ADA0010DCE0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		AF58AEB9256214FF0010DCE0 /* UITextField+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Chainable.swift"; sourceTree = "<group>"; };
+		AF58AECA256230750010DCE0 /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		AF58AECF256230AF0010DCE0 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		AF58AF00256258A40010DCE0 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
+		AF58AF05256258AA0010DCE0 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		AF6DBF49255F828000038C6C /* Webtoon.clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Webtoon.clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6DBF4C255F828000038C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6DBF55255F828000038C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -152,18 +162,15 @@
 		AFC70299255F854B00104FA6 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		AFC702A2255F859000104FA6 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AFC702AA255F859600104FA6 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		AFC702AF255F85A000104FA6 /* SplashNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashNavigator.swift; sourceTree = "<group>"; };
 		AFC702B9255F85CA00104FA6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AFC702C3255F862F00104FA6 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		AFC702CE255F869C00104FA6 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		AFC702D3255F86D300104FA6 /* BaseNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigator.swift; sourceTree = "<group>"; };
 		AFC702E4255F8EAE00104FA6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		AFC702EC255F8F1100104FA6 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		AFC702F1255F8FD600104FA6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		AFC702FA255F90A800104FA6 /* Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chainable.swift; sourceTree = "<group>"; };
 		AFC702FF255F90C500104FA6 /* UIView+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Chainable.swift"; sourceTree = "<group>"; };
 		AFC70304255F912F00104FA6 /* UIImageView+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Chainable.swift"; sourceTree = "<group>"; };
-		AFC7030D255F9A6D00104FA6 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
 		AFC70312255F9A7500104FA6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AFC70317255F9A7B00104FA6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		AFC7031F255F9B2500104FA6 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -189,9 +196,6 @@
 		AFDAC1DF255FACB700797E1E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AFDAC1E4255FACBD00797E1E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		AFDAC1E9255FACC300797E1E /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
-		AFDAC1EE255FACCC00797E1E /* SettingNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNavigator.swift; sourceTree = "<group>"; };
-		AFDAC1F3255FACDA00797E1E /* ChallengeNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeNavigator.swift; sourceTree = "<group>"; };
-		AFDAC1FE255FACE300797E1E /* WebtoonNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonNavigator.swift; sourceTree = "<group>"; };
 		AFDAC208255FC4DC00797E1E /* MainTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarItem.swift; sourceTree = "<group>"; };
 		AFDAC21A255FC58200797E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AFDAC21C255FC59D00797E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -265,6 +269,25 @@
 				AF43273F25611F21005053F6 /* PageBarItem.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AF58AEAB256209480010DCE0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AF58AEAC25620AD40010DCE0 /* SearchViewController.swift */,
+				AF58AEB425620ADA0010DCE0 /* SearchViewModel.swift */,
+				AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AF58AEFF256258880010DCE0 /* UserDefaultService */ = {
+			isa = PBXGroup;
+			children = (
+				AF58AF00256258A40010DCE0 /* UserDefaultService.swift */,
+				AF58AF05256258AA0010DCE0 /* UserDefault.swift */,
+			);
+			path = UserDefaultService;
 			sourceTree = "<group>";
 		};
 		AF6DBF40255F828000038C6C = {
@@ -341,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6DBF4C255F828000038C6C /* AppDelegate.swift */,
+				AF58AECA256230750010DCE0 /* AppDelegate+Injection.swift */,
 				AFC70299255F854B00104FA6 /* AppNavigator.swift */,
 			);
 			path = Application;
@@ -349,11 +373,13 @@
 		AF6DBF8B255F82A700038C6C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AF58AECF256230AF0010DCE0 /* Scene.swift */,
 				AFC7029E255F857600104FA6 /* Splash */,
 				AFC7030C255F9A5E00104FA6 /* Main */,
 				AFDAC1B5255FABF900797E1E /* Webtoon */,
 				AFDAC1B6255FAC0100797E1E /* Challenge */,
 				AFDAC1B7255FAC1300797E1E /* Setting */,
+				AF58AEAB256209480010DCE0 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -386,7 +412,6 @@
 		AFC7029E255F857600104FA6 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				AFC702AF255F85A000104FA6 /* SplashNavigator.swift */,
 				AFC702A2255F859000104FA6 /* SplashViewController.swift */,
 				AFC702AA255F859600104FA6 /* SplashViewModel.swift */,
 				AFDAC192255FA61B00797E1E /* SplashInteractor.swift */,
@@ -409,7 +434,6 @@
 		AFC702B8255F85C300104FA6 /* Bases */ = {
 			isa = PBXGroup;
 			children = (
-				AFC702D3255F86D300104FA6 /* BaseNavigator.swift */,
 				AFC702B9255F85CA00104FA6 /* BaseViewController.swift */,
 				AFDAC230255FC76300797E1E /* BaseNavigationController.swift */,
 				AFC7031F255F9B2500104FA6 /* BaseTabBarController.swift */,
@@ -473,6 +497,7 @@
 				AF43274E25611F9F005053F6 /* UIButton+Chainable.swift */,
 				AF43275325612013005053F6 /* UIStackView+Chainable.swift */,
 				AF43275825612051005053F6 /* UIViewController+Chainable.swift */,
+				AF58AEB9256214FF0010DCE0 /* UITextField+Chainable.swift */,
 			);
 			path = Chainable;
 			sourceTree = "<group>";
@@ -480,7 +505,6 @@
 		AFC7030C255F9A5E00104FA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AFC7030D255F9A6D00104FA6 /* MainNavigator.swift */,
 				AFC70312255F9A7500104FA6 /* MainViewController.swift */,
 				AFC70317255F9A7B00104FA6 /* MainViewModel.swift */,
 				AFDAC208255FC4DC00797E1E /* MainTabBarItem.swift */,
@@ -519,6 +543,7 @@
 		AFDAC160255FA27800797E1E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AF58AEFF256258880010DCE0 /* UserDefaultService */,
 				AFDAC161255FA28300797E1E /* WebtoonService */,
 			);
 			path = Services;
@@ -573,7 +598,6 @@
 		AFDAC1B5255FABF900797E1E /* Webtoon */ = {
 			isa = PBXGroup;
 			children = (
-				AFDAC1FE255FACE300797E1E /* WebtoonNavigator.swift */,
 				AFDAC1B8255FAC5600797E1E /* WebtoonViewController.swift */,
 				AFDAC1C0255FAC5C00797E1E /* WebtoonViewModel.swift */,
 				AFDAC1C5255FAC6300797E1E /* WebtoonInteractor.swift */,
@@ -586,7 +610,6 @@
 		AFDAC1B6255FAC0100797E1E /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				AFDAC1F3255FACDA00797E1E /* ChallengeNavigator.swift */,
 				AFDAC1CA255FAC6D00797E1E /* ChallengeViewController.swift */,
 				AFDAC1CF255FAC7600797E1E /* ChallengeViewModel.swift */,
 				AFDAC1D4255FAC8300797E1E /* ChallengeInteractor.swift */,
@@ -599,7 +622,6 @@
 		AFDAC1B7255FAC1300797E1E /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				AFDAC1EE255FACCC00797E1E /* SettingNavigator.swift */,
 				AFDAC1DF255FACB700797E1E /* SettingViewController.swift */,
 				AFDAC1E4255FACBD00797E1E /* SettingViewModel.swift */,
 				AFDAC1E9255FACC300797E1E /* SettingInteractor.swift */,
@@ -811,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFDAC231255FC76300797E1E /* BaseNavigationController.swift in Sources */,
+				AF58AEAD25620AD40010DCE0 /* SearchViewController.swift in Sources */,
 				AFF210D72561870600485149 /* Challenge.swift in Sources */,
 				AFC702A3255F859000104FA6 /* SplashViewController.swift in Sources */,
 				AFDAC1E5255FACBD00797E1E /* SettingViewModel.swift in Sources */,
@@ -829,7 +852,9 @@
 				AFDAC13F255F9F3D00797E1E /* ObservableType.swift in Sources */,
 				AFC702C4255F862F00104FA6 /* Log.swift in Sources */,
 				AF432731255FECD7005053F6 /* UIViewController.swift in Sources */,
+				AF58AEBA256214FF0010DCE0 /* UITextField+Chainable.swift in Sources */,
 				AFDAC193255FA61B00797E1E /* SplashInteractor.swift in Sources */,
+				AF58AF01256258A40010DCE0 /* UserDefaultService.swift in Sources */,
 				AFF210C72561832200485149 /* BaseTableView.swift in Sources */,
 				AFF210B82561801800485149 /* ChallengeListViewModel.swift in Sources */,
 				AFDAC22C255FC70D00797E1E /* String.swift in Sources */,
@@ -841,7 +866,9 @@
 				AFDAC14D255FA19B00797E1E /* NetworkProvider.swift in Sources */,
 				AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */,
 				AFF210B02561801100485149 /* ChallengeListViewController.swift in Sources */,
+				AF58AF0B25625A1D0010DCE0 /* SearchInteractor.swift in Sources */,
 				AFF210C2256180B200485149 /* ChallengePageBarItem.swift in Sources */,
+				AF58AF06256258AA0010DCE0 /* UserDefault.swift in Sources */,
 				AF43276825612BAB005053F6 /* Padding.swift in Sources */,
 				AFF210AA25617F2000485149 /* BaseImageView.swift in Sources */,
 				AF432724255FDCDE005053F6 /* WebtoonListViewController.swift in Sources */,
@@ -850,31 +877,27 @@
 				AFDAC1E0255FACB700797E1E /* SettingViewController.swift in Sources */,
 				AFDAC170255FA2B900797E1E /* WebtoonServiceType.swift in Sources */,
 				AFC70313255F9A7500104FA6 /* MainViewController.swift in Sources */,
+				AF58AED0256230AF0010DCE0 /* Scene.swift in Sources */,
 				AFC70318255F9A7B00104FA6 /* MainViewModel.swift in Sources */,
-				AFC7030E255F9A6D00104FA6 /* MainNavigator.swift in Sources */,
 				AFC702AB255F859600104FA6 /* SplashViewModel.swift in Sources */,
 				AFDAC253255FD2B300797E1E /* WebtoonListCell.swift in Sources */,
 				AFDAC148255FA17E00797E1E /* NetworkLoggerPlugin.swift in Sources */,
 				AF432729255FE5EE005053F6 /* UITabBar+Chainable.swift in Sources */,
 				AFC70300255F90C500104FA6 /* UIView+Chainable.swift in Sources */,
-				AFDAC1F4255FACDA00797E1E /* ChallengeNavigator.swift in Sources */,
 				AFDAC270255FD76400797E1E /* NSObject.swift in Sources */,
 				AFDAC24E255FCFE300797E1E /* UILabel + Chainable.swift in Sources */,
-				AFDAC1FF255FACE300797E1E /* WebtoonNavigator.swift in Sources */,
 				AFDAC1C1255FAC5C00797E1E /* WebtoonViewModel.swift in Sources */,
 				AF43274F25611F9F005053F6 /* UIButton+Chainable.swift in Sources */,
 				AFDAC209255FC4DC00797E1E /* MainTabBarItem.swift in Sources */,
 				AFC702CF255F869C00104FA6 /* BaseViewModel.swift in Sources */,
 				AF43275925612051005053F6 /* UIViewController+Chainable.swift in Sources */,
 				AFDAC249255FCDE900797E1E /* WebtoonListViewModel.swift in Sources */,
-				AFC702B0255F85A000104FA6 /* SplashNavigator.swift in Sources */,
 				AFDAC181255FA31E00797E1E /* WebtoonResponse.swift in Sources */,
 				AFC702BA255F85CA00104FA6 /* BaseViewController.swift in Sources */,
 				AFDAC262255FD48200797E1E /* Device.swift in Sources */,
 				AFF210D22561845F00485149 /* BaseTableViewCell.swift in Sources */,
-				AFC702D4255F86D300104FA6 /* BaseNavigator.swift in Sources */,
 				AFC70327255F9B7400104FA6 /* UIViewController+Rx.swift in Sources */,
-				AFDAC1EF255FACCC00797E1E /* SettingNavigator.swift in Sources */,
+				AF58AEB525620ADA0010DCE0 /* SearchViewModel.swift in Sources */,
 				AF43275425612013005053F6 /* UIStackView+Chainable.swift in Sources */,
 				AFDAC275255FD80A00797E1E /* UICollectionView+Chainable.swift in Sources */,
 				AFDAC163255FA29900797E1E /* WebtoonSampleService.swift in Sources */,
@@ -883,6 +906,7 @@
 				AFDAC1C6255FAC6300797E1E /* WebtoonInteractor.swift in Sources */,
 				AFF210CD2561841000485149 /* UITableView+Chainable.swift in Sources */,
 				AF43275E256123B5005053F6 /* Webtoon.swift in Sources */,
+				AF58AECB256230750010DCE0 /* AppDelegate+Injection.swift in Sources */,
 				AFC702E5255F8EAE00104FA6 /* Image.swift in Sources */,
 				AF43274A25611F83005053F6 /* Font.swift in Sources */,
 				AF43274525611F3B005053F6 /* BaseView.swift in Sources */,

@@ -11,7 +11,7 @@ import Resolver
 
 class SplashViewController: BaseViewController {
   @Injected var viewModel: SplashViewModel
-  @Injected var navigator: SplashNavigator
+  @Injected var navigator: AppNavigator
 }
 
 extension SplashViewController {
@@ -30,9 +30,9 @@ extension SplashViewController {
     )
     let state = viewModel.reduce(event: event)
     
-    state.presentMainScene
+    state.present
       .drive(onNext: { [weak self] in
-        self?.navigator.presentMainScene(in: self)
+        self?.navigator.present(scene: $0, from: self)
       }).disposed(by: disposeBag)
   }
 }

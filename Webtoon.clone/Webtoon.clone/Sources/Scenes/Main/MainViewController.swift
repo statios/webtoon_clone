@@ -12,14 +12,19 @@ import Resolver
 class MainViewController: BaseTabBarController {
   
   @Injected var viewModel: MainViewModel
-  @Injected var navigator: MainNavigator
+  @Injected var navigator: AppNavigator
   
 }
 
 extension MainViewController {
+  override func initialize() {
+    super.initialize()
+    let viewControllers = MainTabBarItem.allCases
+      .map { BaseNavigationController(rootViewController: $0.viewController) }
+    navigator.setTabBar(viewControllers: viewControllers, from: self)
+  }
   override func setupUI() {
     super.setupUI()
-    navigator.setViewControllers(in: self)
   }
 }
 

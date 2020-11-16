@@ -23,6 +23,7 @@ struct Text {
   static let action = "action".localized
   static let sports = "sports".localized
   static let drama = "drama".localized
-  
-  
+  //common
+  static let cancel = "cancel".localized
+  static let searchTitleAuthor = "search_title_or_author".localized
 }

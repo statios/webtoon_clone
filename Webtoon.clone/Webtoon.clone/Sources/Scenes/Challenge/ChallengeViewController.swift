@@ -10,17 +10,13 @@ import RxSwift
 import Resolver
 
 final class ChallengeViewController: BasePageViewController {
-  
   @Injected var viewModel: ChallengeViewModel
-  @Injected var navigator: ChallengeNavigator
+  @Injected var navigator: AppNavigator
   
+  private let searchButton = UIButton()
 }
 
 extension ChallengeViewController {
-  override func initialize() {
-    super.initialize()
-    navigator.setViewControllers(in: self)
-  }
   override func setupUI() {
     super.setupUI()
     
@@ -33,14 +29,30 @@ extension ChallengeViewController {
     
     view.asChainable()
       .background(color: Color.white)
+    
+    searchButton.asChainable()
+      .addBarButtonItem(self, position: .right)
+      .background(color: Color.empty)
   }
 }
 
 extension ChallengeViewController {
   override func setupBinding() {
     super.setupBinding()
-    let event = ChallengeViewModel.Event()
+    let event = ChallengeViewModel.Event(
+      tapSearch: searchButton.rx.tap.asObservable()
+    )
     let state = viewModel.reduce(event: event)
+    
+    state.pages
+      .drive(onNext: { [weak self] in
+        self?.navigator.setPage(viewControllers: $0, from: self)
+      }).disposed(by: disposeBag)
+    
+    state.push
+      .drive(onNext: { [weak self] in
+        self?.navigator.push(scene: $0, from: self)
+      }).disposed(by: disposeBag)
   }
 }
 

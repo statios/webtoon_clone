@@ -79,6 +79,18 @@ extension Chain where Origin: UIView {
   }
   
   @discardableResult
+  func frameSize(_ size: CGSize) -> Chain {
+    self.origin.frame.size = size
+    return self
+  }
+  
+  @discardableResult
+  func frameWidth(_ width: CGFloat) -> Chain {
+    self.origin.frame.size.width = width
+    return self
+  }
+  
+  @discardableResult
   func isHidden(_ isHidden: Bool) -> Chain {
     self.origin.isHidden = isHidden
     return self
@@ -101,6 +113,27 @@ extension Chain where Origin: UIView {
     self.origin.semanticContentAttribute = attribute
     return self
   }
+  
+  @discardableResult
+  func addBarButtonItem(_ target: UIViewController, position: Direction) -> Chain {
+    let barButtonItem = UIBarButtonItem(customView: self.origin)
+    if position == .left {
+      target.navigationItem.leftBarButtonItem = barButtonItem
+    } else if position == .right {
+      target.navigationItem.rightBarButtonItem = barButtonItem
+    } else if position == .mid {
+      target.navigationItem.titleView = self.origin
+    }
+//    target.navigationItem.title
+    return self
+  }
 }
 
+enum Direction: Int, Codable {
+  case left = 0
+  case right = 1
+  case top = 2
+  case bottom = 3
+  case mid = 4
+}
 

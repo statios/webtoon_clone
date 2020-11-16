@@ -15,7 +15,7 @@ final class WebtoonListViewController: BaseViewController {
   }
   
   @Injected var viewModel: WebtoonListViewModel
-  @Injected var navigator: WebtoonNavigator
+  @Injected var navigator: AppNavigator
   
   private let webtoonListView = BaseCollectionView()
 }

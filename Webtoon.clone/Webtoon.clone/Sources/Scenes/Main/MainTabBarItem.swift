@@ -12,6 +12,7 @@ enum MainTabBarItem: CaseIterable {
   case challenge
   case setting
 }
+
 extension MainTabBarItem {
   var title: String {
     switch self {
@@ -20,13 +21,7 @@ extension MainTabBarItem {
     case .setting: return Text.setting
     }
   }
-//  var image: UIImage? {
-//    switch self {
-//    case .home: return Image.Icon.home
-//    case .suggest: return Image.Icon.video
-//    case .like: return Image.Icon.like
-//    }
-//  }
+  
   var viewController: UIViewController {
     var viewController: UIViewController
     switch self {
@@ -35,7 +30,6 @@ extension MainTabBarItem {
     case .setting: viewController = SettingViewController()
     }
     viewController.title = title
-//    viewController.tabBarItem.image = image
     return viewController
   }
 }

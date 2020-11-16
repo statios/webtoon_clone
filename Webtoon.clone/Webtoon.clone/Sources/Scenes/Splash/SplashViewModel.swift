@@ -18,7 +18,7 @@ class SplashViewModel: BaseViewModel {
   }
   
   struct State {
-    let presentMainScene: Driver<Void>
+    let present: Driver<Scene>
   }
 }
 
@@ -29,7 +29,7 @@ extension SplashViewModel {
     let splashSuccess = splashRequest.filter { $0.isSuccess }
 //    let splashFailure = splashRequest.filter { !$0.isSuccess}.compactMap { $0.message }
     return State(
-      presentMainScene: Observable.zip(delay, splashSuccess).void().asDriver()
+      present: Observable.zip(delay, splashSuccess).map { _ in Scene.main }.asDriver(onErrorJustReturn: .empty)
     )
   }
 }

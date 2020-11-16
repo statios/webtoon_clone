@@ -10,7 +10,6 @@ import RxCocoa
 import UIKit
 
 final class ChallengeListCell: BaseTableViewCell {
-  
   struct Metric {
     static let thumbnailWidth = CGFloat(128)
   }
@@ -36,8 +35,10 @@ extension ChallengeListCell {
       .background(color: Color.empty)
       .add(to: contentView)
       .makeConstraints { (make) in
-        make.leading.top.equalToSuperview().offset(Padding.small)
-        make.bottom.equalToSuperview().offset(-Padding.small)
+        make.leading.top.equalToSuperview()
+          .offset(Padding.small)
+        make.bottom.equalToSuperview()
+          .offset(-Padding.small)
         make.width.equalTo(Metric.thumbnailWidth)
       }
     
@@ -46,8 +47,10 @@ extension ChallengeListCell {
       .font(Font.medium)
       .add(to: contentView)
       .makeConstraints { (make) in
-        make.top.equalToSuperview().offset(Padding.small)
-        make.leading.equalTo(thumbnailView.snp.trailing).offset(Padding.small)
+        make.top.equalToSuperview()
+          .offset(Padding.small)
+        make.leading.equalTo(thumbnailView.snp.trailing)
+          .offset(Padding.small)
       }
     
     authorLabel.asChainable()
@@ -55,7 +58,8 @@ extension ChallengeListCell {
       .font(Font.small)
       .add(to: contentView)
       .makeConstraints { (make) in
-        make.top.equalTo(titleLabel.snp.bottom).offset(Padding.extraSmall)
+        make.top.equalTo(titleLabel.snp.bottom)
+          .offset(Padding.extraSmall)
         make.leading.equalTo(titleLabel)
       }
     
@@ -64,7 +68,8 @@ extension ChallengeListCell {
       .font(Font.small)
       .add(to: contentView)
       .makeConstraints { (make) in
-        make.top.equalTo(authorLabel.snp.bottom).offset(Padding.extraSmall)
+        make.top.equalTo(authorLabel.snp.bottom)
+          .offset(Padding.extraSmall)
         make.leading.equalTo(titleLabel)
       }
     
@@ -73,9 +78,11 @@ extension ChallengeListCell {
       .font(Font.extraSmall)
       .add(to: contentView)
       .makeConstraints { (make) in
-        make.top.equalTo(introduceLabel.snp.bottom).offset(Padding.extraSmall)
+        make.top.equalTo(introduceLabel.snp.bottom)
+          .offset(Padding.extraSmall)
         make.leading.equalTo(titleLabel)
-        make.bottom.equalToSuperview().offset(-Padding.small)
+        make.bottom.equalToSuperview()
+          .offset(-Padding.small)
       }
     
     dateLabel.asChainable()
@@ -84,7 +91,8 @@ extension ChallengeListCell {
       .add(to: contentView)
       .makeConstraints { (make) in
         make.top.equalTo(ratingLabel)
-        make.leading.equalTo(ratingLabel.snp.trailing).offset(Padding.small)
+        make.leading.equalTo(ratingLabel.snp.trailing)
+          .offset(Padding.small)
       }
   }
 }

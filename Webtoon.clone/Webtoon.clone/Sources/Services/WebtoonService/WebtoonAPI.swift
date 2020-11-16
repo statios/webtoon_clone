@@ -12,6 +12,7 @@ enum WebtoonAPI {
   case splash
   case webtoonList(weekday: Int)
   case challengeList(category: String)
+  case search(keyword: String)
 }
 
 extension WebtoonAPI: TargetType {
@@ -25,6 +26,7 @@ extension WebtoonAPI: TargetType {
     case .splash: return "/splash"
     case .webtoonList: return "/webtoon/list"
     case .challengeList: return "/challenge/list"
+    case .search: return "/search"
     }
   }
   
@@ -33,6 +35,7 @@ extension WebtoonAPI: TargetType {
     case .splash: return .get
     case .webtoonList: return .get
     case .challengeList: return .get
+    case .search: return .get
     }
   }
   
@@ -41,6 +44,7 @@ extension WebtoonAPI: TargetType {
     case .splash: return getSampleData(name: "splash")
     case .webtoonList: return getSampleData(name: "webtoonList")
     case .challengeList: return getSampleData(name: "challengeList")
+    case .search: return getSampleData(name: "search")
     }
   }
   
@@ -53,6 +57,9 @@ extension WebtoonAPI: TargetType {
     case .challengeList(let category): return .requestParameters(
       parameters: ["category": category],
       encoding: JSONEncoding.default)
+    case .search(let keyword): return .requestParameters(
+      parameters: ["query": keyword],
+      encoding: URLEncoding.queryString)
     }
   }
   

@@ -12,7 +12,7 @@ import Resolver
 final class ChallengeListViewController: BaseViewController {
   
   @Injected var viewModel: ChallengeListViewModel
-  @Injected var navigator: ChallengeNavigator
+  @Injected var navigator: AppNavigator
   
   private let challengeListView = BaseTableView()
 }

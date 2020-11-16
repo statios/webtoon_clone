@@ -27,7 +27,8 @@ class BasePageViewController: UIPageViewController {
                navigationOrientation: .horizontal,
                options: nil)
     Log.verbose(String(describing: Self.self))
-    initialize()
+    setupUI()
+    setupBinding()
   }
   
   required init?(coder: NSCoder) {
@@ -40,17 +41,12 @@ class BasePageViewController: UIPageViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupUI()
-    setupBinding()
-  }
-  
-  @objc dynamic func initialize() {
-    //Don't call view in here
-    self.dataSource = self
-    self.delegate = self
   }
   
   @objc dynamic func setupUI() {
+    self.dataSource = self
+    self.delegate = self
+    
     pageBar.asChainable()
       .add(to: view)
       .makeConstraints { (make) in

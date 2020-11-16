@@ -11,27 +11,14 @@ import SnapKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  @Injected var navigator: AppNavigator
   var window: UIWindow?
   
   func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
   -> Bool {
-    window = UIWindow(frame: UIScreen.main.bounds)
-    AppNavigator.presentSplashScene(in: window)
+    window = navigator.root
     return true
   }
 }
-
-extension Resolver: ResolverRegistering {
-  public static func registerAllServices() {
-    AppNavigator.registerServices()
-    AppNavigator.registerSplashScene()
-    SplashNavigator.registerSplashScenes()
-    MainNavigator.registerMainScenes()
-    WebtoonNavigator.registerWebtoonScenes()
-    ChallengeNavigator.registerChallengeScenes()
-  }
-}
-
