@@ -26,9 +26,9 @@ public class BaseTableView: UITableView {
   @objc dynamic func setupUI() {
     rowHeight = UITableView.automaticDimension
     estimatedRowHeight = 54
-    sectionHeaderHeight = 30
+//    sectionHeaderHeight = 30
     keyboardDismissMode = .onDrag
-    tableFooterView = UIView()
+//    tableFooterView = UIView()
     separatorStyle = .none
     backgroundColor = Color.white
   }
