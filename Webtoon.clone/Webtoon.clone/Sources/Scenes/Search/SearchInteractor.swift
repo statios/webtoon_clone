@@ -12,6 +12,9 @@ import RxSwift
 protocol SearchInteractable {
   func addSearchHistory(_ keyword: String)
   func getSearchHistory() -> [String]
+  func resetSearchHistory()
+  func removeSearchHistory(_ index: Int)
+  func requestSearch(_ keyword: String) -> Single<WebtoonResponse<[Webtoon]>>
 }
 
 final class SearchInteractor: BaseInteractor, SearchInteractable {
@@ -19,15 +22,26 @@ final class SearchInteractor: BaseInteractor, SearchInteractable {
   @Injected var webtoonService: WebtoonServiceType
   
   func addSearchHistory(_ keyword: String) {
-    guard userDefaultService.searchHistory.filter({ $0 == keyword }).isEmpty else { return }
-    userDefaultService.searchHistory.append(keyword)
+    guard userDefaultService.searchHistory.filter({ $0 == keyword }).isEmpty else {
+      return
+    }
+    userDefaultService.searchHistory.insert(keyword, at: 0)
   }
   
   func getSearchHistory() -> [String] {
-    Array(userDefaultService.searchHistory)
+    userDefaultService.searchHistory
+  }
+  
+  func removeSearchHistory(_ index: Int) {
+    userDefaultService.searchHistory.remove(at: index)
   }
   
   func resetSearchHistory() {
     userDefaultService.searchHistory.removeAll()
+  }
+  
+  func requestSearch(_ keyword: String)
+  -> Single<WebtoonResponse<[Webtoon]>> {
+    webtoonService.request(to: .search(keyword: keyword), type: [Webtoon].self)
   }
 }

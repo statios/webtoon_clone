@@ -13,4 +13,16 @@ extension Chain where Origin: UITableView {
     self.origin.register(cellType, forCellReuseIdentifier: cellType.className)
     return self
   }
+  
+  @discardableResult
+  func keyboardDismiss(mode: UIScrollView.KeyboardDismissMode) -> Chain {
+    self.origin.keyboardDismissMode = mode
+    return self
+  }
+  
+  @discardableResult
+  func rowHeight(_ height: CGFloat) -> Chain {
+    self.origin.rowHeight = height
+    return self
+  }
 }

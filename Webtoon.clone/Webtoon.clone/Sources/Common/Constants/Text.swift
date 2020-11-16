@@ -26,4 +26,5 @@ struct Text {
   //common
   static let cancel = "cancel".localized
   static let searchTitleAuthor = "search_title_or_author".localized
+  static let searchEmpty = "search_empty".localized
 }

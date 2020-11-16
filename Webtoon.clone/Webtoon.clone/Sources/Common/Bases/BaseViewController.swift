@@ -33,6 +33,11 @@ class BaseViewController: UIViewController {
     Log.verbose(String(describing: Self.self))
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    navigationController?.navigationBar.endEditing(true)
+    view.endEditing(true)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()

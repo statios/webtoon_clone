@@ -18,7 +18,7 @@ final class AppNavigator {
   }
   
   func pop(from target: UIViewController?,
-           animated: Bool = false) {
+           animated: Bool = true) {
     target?.navigationController?.popViewController(animated: animated)
   }
   

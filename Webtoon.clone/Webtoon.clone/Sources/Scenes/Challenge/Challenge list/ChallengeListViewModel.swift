@@ -39,7 +39,7 @@ extension ChallengeListViewModel {
     trigger
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
       .compactMap { [weak self] in self?.category }
-      .flatMapLatest { [weak self] category -> Single<WebtoonResponse<[Challenge]>> in
+      .flatMap { [weak self] category -> Single<WebtoonResponse<[Challenge]>> in
         guard let `self` = self else { return .never() }
         return self.challengeInteractor.requestChallengeList(category)
       }.observeOn(MainScheduler.instance).share()

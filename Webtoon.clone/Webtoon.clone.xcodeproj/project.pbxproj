@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF30F81B25628BC600028737 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30F81A25628BC600028737 /* SearchHistoryCell.swift */; };
 		AF432724255FDCDE005053F6 /* WebtoonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432723255FDCDE005053F6 /* WebtoonListViewController.swift */; };
 		AF432729255FE5EE005053F6 /* UITabBar+Chainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */; };
 		AF432731255FECD7005053F6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF432730255FECD7005053F6 /* UIViewController.swift */; };
@@ -28,6 +29,7 @@
 		AF58AF01256258A40010DCE0 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF00256258A40010DCE0 /* UserDefaultService.swift */; };
 		AF58AF06256258AA0010DCE0 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF05256258AA0010DCE0 /* UserDefault.swift */; };
 		AF58AF0B25625A1D0010DCE0 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */; };
+		AF58AF18256266C20010DCE0 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = AF58AF17256266C20010DCE0 /* search.json */; };
 		AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6DBF4C255F828000038C6C /* AppDelegate.swift */; };
 		AF6DBF56255F828000038C6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF55255F828000038C6C /* Images.xcassets */; };
 		AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF6DBF57255F828000038C6C /* LaunchScreen.storyboard */; };
@@ -127,6 +129,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF30F81A25628BC600028737 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		AF432723255FDCDE005053F6 /* WebtoonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebtoonListViewController.swift; sourceTree = "<group>"; };
 		AF432728255FE5EE005053F6 /* UITabBar+Chainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Chainable.swift"; sourceTree = "<group>"; };
 		AF432730255FECD7005053F6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		AF58AF00256258A40010DCE0 /* UserDefaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		AF58AF05256258AA0010DCE0 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		AF58AF17256266C20010DCE0 /* search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		AF6DBF49255F828000038C6C /* Webtoon.clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Webtoon.clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6DBF4C255F828000038C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6DBF55255F828000038C6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -277,6 +281,7 @@
 				AF58AEAC25620AD40010DCE0 /* SearchViewController.swift */,
 				AF58AEB425620ADA0010DCE0 /* SearchViewModel.swift */,
 				AF58AF0A25625A1D0010DCE0 /* SearchInteractor.swift */,
+				AF30F81A25628BC600028737 /* SearchHistoryCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				AFDAC1A0255FA75500797E1E /* splash.json */,
 				AF432762256124B6005053F6 /* webtoonList.json */,
 				AFF210DB2561883600485149 /* challengeList.json */,
+				AF58AF17256266C20010DCE0 /* search.json */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -802,6 +808,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFC702F2255F8FD600104FA6 /* Colors.xcassets in Resources */,
+				AF58AF18256266C20010DCE0 /* search.json in Resources */,
 				AF6DBF59255F828000038C6C /* LaunchScreen.storyboard in Resources */,
 				AFDAC1A1255FA75500797E1E /* splash.json in Resources */,
 				AFF210DC2561883600485149 /* challengeList.json in Resources */,
@@ -864,6 +871,7 @@
 				AFDAC23B255FCD3F00797E1E /* WebtoonPageBarItem.swift in Sources */,
 				AFC7029A255F854B00104FA6 /* AppNavigator.swift in Sources */,
 				AFDAC14D255FA19B00797E1E /* NetworkProvider.swift in Sources */,
+				AF30F81B25628BC600028737 /* SearchHistoryCell.swift in Sources */,
 				AF6DBF4D255F828000038C6C /* AppDelegate.swift in Sources */,
 				AFF210B02561801100485149 /* ChallengeListViewController.swift in Sources */,
 				AF58AF0B25625A1D0010DCE0 /* SearchInteractor.swift in Sources */,

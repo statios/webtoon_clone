@@ -13,6 +13,7 @@ struct Color {
   static let white = UIColor.white
   static let black = UIColor.black
   static let gray = UIColor.gray
+  static let lightGray = UIColor.lightGray
 }
 
 

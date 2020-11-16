@@ -40,7 +40,7 @@ extension WebtoonListViewModel {
     trigger
       .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
       .compactMap { [weak self] in self?.weekday }
-      .flatMapLatest { [weak self] weekday -> Single<WebtoonResponse<[Webtoon]>> in
+      .flatMap { [weak self] weekday -> Single<WebtoonResponse<[Webtoon]>> in
         guard let `self` = self else { return .never() }
         return self.webtoonInteractor.requestWebtoonList(weekday)
       }.observeOn(MainScheduler.instance).share()

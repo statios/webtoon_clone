@@ -62,6 +62,7 @@ extension Resolver {
       .scope(shared)
     
     register { SearchViewModel() }
+      .scope(shared)
     register { SearchInteractor() }
       .implements(SearchInteractable.self)
       .scope(shared)

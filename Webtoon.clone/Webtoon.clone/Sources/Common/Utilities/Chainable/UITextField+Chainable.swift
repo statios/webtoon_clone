@@ -31,4 +31,10 @@ extension Chain where Origin: UITextField {
     self.origin.returnKeyType = type
     return self
   }
+  
+  @discardableResult
+  func clearButton(mode: UITextField.ViewMode) -> Chain {
+    self.origin.clearButtonMode = mode
+    return self
+  }
 }

@@ -23,3 +23,4 @@
 "drama" = "드라마";
 "cancel" = "취소";
 "search_title_or_author" = "제목 또는 작가명 검색";
+"search_empty" = "검색 결과가 없습니다";
