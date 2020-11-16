@@ -23,7 +23,6 @@ MVVM with UIKit + RxSwift
 
 - Models
 
----
 
 ## ETC
 
@@ -33,7 +32,6 @@ MVVM with UIKit + RxSwift
 - Using a property wrapper for UserDefault
 - UI Preview
 
----
 
 ## Libraries
 
@@ -43,7 +41,6 @@ MVVM with UIKit + RxSwift
 - SnapKit
 - Resolver
 
----
 
 ## Environment
 
